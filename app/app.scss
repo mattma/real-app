@@ -1,0 +1,38 @@
+﻿// Bootstrap v4 variables
+// https://github.com/twbs/bootstrap/blob/v4-dev/scss/_variables.scss
+$text-muted: #818a91 !default;
+
+$gray-dark: #373a3c !default;
+$gray: #55595c !default;
+$gray-light: #818a91 !default;
+$gray-lighter: #eceeef !default;
+$gray-lightest: #f7f7f9 !default;
+
+$brand-primary: #0275d8 !default;
+$brand-success: #5cb85c !default;
+$brand-info: #5bc0de !default;
+$brand-warning: #f0ad4e !default;
+$brand-danger: #d9534f !default;
+$brand-inverse: $gray-dark !default;
+
+$btn-primary-color: #fff !default;
+$btn-primary-bg: $brand-primary !default;
+$btn-primary-border: $btn-primary-bg !default;
+
+$btn-secondary-color: $gray-dark !default;
+$btn-secondary-bg: #fff !default;
+$btn-secondary-border: #ccc !default;
+
+$btn-link-disabled-color: $gray-light !default;
+
+@import './_bootstrap-map.scss';
+
+@import './core.light.ios.scss';
+@import './core.light.android.scss';
+
+// @import url('~/platform.css');
+
+Page {
+  background-color: white;
+  font-size: 15;
+}
