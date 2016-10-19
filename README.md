@@ -1,6 +1,6 @@
-# NativeScript Starter
+# Client
 
-> NativeScript Angular2 Typescript boilerplate. Quick start to build a native mobile application.
+> A native mobile client
 
 ## Installation Requirement
 
@@ -9,14 +9,20 @@
 Note: Using [nvm](https://github.com/creationix/nvm), Node version manager, is highly recommended.
 It is simple to install and manage your system Node version over the official Node.js installation.
 
-2. [nativescript](https://github.com/NativeScript/NativeScript)
+2. [yarn](https://github.com/yarnpkg/yarn)
+
+```bash
+npm install -g yarn
+```
+
+3. [nativescript](https://github.com/NativeScript/NativeScript)
 
 ```bash
 npm install -g nativescript
 tns --version
 ```
 
-3. [CocoaPods](https://docs.nativescript.org/plugins/cocoapods)
+4. [CocoaPods](https://docs.nativescript.org/plugins/cocoapods)
 
 ```bash
 sudo gem install cocoapods
@@ -27,13 +33,13 @@ pod --version
 
 ```bash
 # Step 1: Clone the repo
-git clone https://github.com/mattma/nativescript-starter.git
+git clone https://github.com/mattma/me-client
 
 # Step 2: Go into the repo folder
-cd nativescript-starter
+cd me-client
 
 # Step 3: Install module dependencies
-npm install
+yarn
 
 # Step 4: Launch in iOS simulator
 npm start
