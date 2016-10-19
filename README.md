@@ -45,6 +45,23 @@ yarn
 npm start
 ```
 
+## Font Icons support
+
+1. [Font Awesome](http://fontawesome.io/icons/) Current version **v4.6.3**
+
+Use UniCode to represent an icon. `&#x ;` wrap the actual UniCode in text property.
+
+```html
+<Button text="&#xf1e2;" class="fa"></Button>
+```
+
+2. [IonIcons](http://ionicons.com/) Current version **v2.0.1**
+
+```html
+<Button text="&#xf14b;" class="ion"></Button>
+```
+
+
 ## Running unit tests
 
 Coming soon!
