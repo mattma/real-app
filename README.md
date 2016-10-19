@@ -65,8 +65,3 @@ Use UniCode to represent an icon. `&#x ;` wrap the actual UniCode in text proper
 ## Running unit tests
 
 Coming soon!
-
-
-## License
-
-[MIT Licensed](./LICENSE.md). Made with love by [Matt Ma](http://mattmadesign.com).
