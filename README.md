@@ -29,6 +29,8 @@ sudo gem install cocoapods
 pod --version
 ```
 
+5. Install latest xCode
+
 ## Getting start guide
 
 ```bash

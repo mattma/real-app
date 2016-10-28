@@ -12,7 +12,7 @@ import { User } from './shared/user';
   selector: 'ns-login',
   templateUrl: 'login/login.component.html',
   // By default, it loads up `app.css` without specify
-  // styleUrls: ['login/login-common.css', 'login/login.css']
+  styleUrls: ['login/login-common.css']
 })
 export class LoginComponent implements OnInit {
   @ViewChild('container') container: ElementRef;
