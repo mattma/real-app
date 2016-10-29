@@ -9,10 +9,10 @@ import { LoginService } from './shared/login.service';
 import { User } from './shared/user';
 
 @Component({
-  selector: 'ns-login',
-  templateUrl: 'login/login.component.html',
+  selector: 'real-login',
+  templateUrl: 'components/login/login.component.html',
   // By default, it loads up `app.css` without specify
-  styleUrls: ['login/login-common.css']
+  styleUrls: ['components/login/login-common.css']
 })
 export class LoginComponent implements OnInit {
   @ViewChild('container') container: ElementRef;
