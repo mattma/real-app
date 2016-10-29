@@ -1,0 +1,21 @@
+@import 'shared/styles/nova/colors.scss';
+
+.segmented-bar {
+  height: 50;
+
+  .segmnted-bar-light {
+    background-color: $color-light;
+  }
+
+  .segmented-bar-accent {
+    background-color: $color-accent;
+    color: $color-light;
+
+  }
+
+  .segmented-bar-dark {
+    background-color: $color-dark;
+    color: $color-light;
+  }
+}
+

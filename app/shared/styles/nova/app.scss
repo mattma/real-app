@@ -1,0 +1,59 @@
+@import 'shared/styles/nova/action-bar.scss';
+@import 'shared/styles/nova/text.scss';
+@import 'shared/styles/nova/button.scss';
+@import 'shared/styles/nova/list-view.scss';
+@import 'shared/styles/nova/card.scss';
+@import 'shared/styles/nova/forms.scss';
+@import 'shared/styles/nova/switch.scss';
+@import 'shared/styles/nova/slider.scss';
+@import 'shared/styles/nova/segmented-bar.scss';
+@import 'shared/styles/nova/checkbox.scss';
+@import 'shared/styles/nova/radio-button.scss';
+@import 'shared/styles/nova/activity-indicator.scss';
+
+textfield {
+  font-size: 14;
+}
+
+.fa {
+  font-family: 'FontAwesome', fontawesome-webfont;
+}
+
+.fa-large {
+  font-family: 'FontAwesome', FontAwesome;
+  font-size: 26;
+}
+
+.padding {
+  padding: 10;
+}
+
+.edges {
+  margin-left: 10;
+  margin-right: 10;
+}
+
+.left {
+  horizontal-align: left;
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+  horizontal-align: right;
+}
+
+.center {
+  horizontal-align: center;
+  text-align: center;
+}
+
+.hr {
+  height: 1;
+  background-color: #CDCDCD;
+}
+
+.debug {
+  border-width: 1;
+  border-color: red;
+}
