@@ -3,7 +3,7 @@ import { NativeScriptRouterModule } from 'nativescript-angular/router';
 
 import { routes } from './app.routes';
 
-import { LoginModule } from './login/login.module';
+import { LoginModule } from './components/login/login.module';
 
 export const ApplicationModules = [
   NativeScriptModule,
