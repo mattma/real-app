@@ -1,5 +1,5 @@
 <GridLayout rows="*, 40">
-  <StackLayout #container class="card" row="1">
+  <StackLayout #container class="card" row="0">
     <StackLayout class="input-field">
       <TextField #email class="input input-border" hint="Email Address" keyboardType="email" autocorrect="false" autocapitalizationType="none" [(ngModel)]="user.email"></TextField>
     </StackLayout>
@@ -14,7 +14,7 @@
     <Button class="btn btn-primary btn-outline" [text]="isLoggedIn ? 'Sign up' : 'Back to login'" (tap)="toggleDisplay()"></Button>
   </StackLayout>
 
-  <DockLayout stretchLastChild="false" row="2">
+  <DockLayout stretchLastChild="false" row="1">
     <GridLayout columns="*, *, *, *, *" class="footer">
       <Button text="&#xf015;" class="fa" row="1" col="0"></Button>
       <Button text="&#xf0c0;" class="fa" row="1" col="1"></Button>
