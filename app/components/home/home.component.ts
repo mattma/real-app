@@ -1,5 +1,5 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { RouterExtensions } from 'nativescript-angular/router';
 import { Page } from 'ui/page';
 import { Color } from 'color';
 import { View } from 'ui/core/view';
@@ -11,7 +11,7 @@ import { View } from 'ui/core/view';
   // styleUrls: ['components/home/home-common.css']
 })
 export class HomeComponent implements OnInit {
-  constructor (private router: Router, private page: Page) {
+  constructor (private routerExtensions: RouterExtensions, private page: Page) {
   }
 
   ngOnInit () {
