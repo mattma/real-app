@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { topmost } from "ui/frame";
 import { isIOS } from "platform";
-import { Router } from '@angular/router';
+import { RouterExtensions } from 'nativescript-angular/router';
 
 @Component({
   selector: 'real-app',
@@ -22,7 +22,7 @@ import { Router } from '@angular/router';
   `
 })
 export class AppComponent implements OnInit {
-  constructor (private router: Router) {
+  constructor (private routerExtensions: RouterExtensions) {
   }
 
   ngOnInit () {
@@ -35,6 +35,12 @@ export class AppComponent implements OnInit {
 
   // Event
   navToPage () {
-    this.router.navigateByUrl('login');
+    this.routerExtensions.navigate(['/login'], {
+      transition: {
+        name: 'slideRight',
+        duration: 300,
+        curve: 'easeInOut'
+      }
+    });
   }
 }
