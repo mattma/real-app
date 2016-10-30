@@ -16,4 +16,15 @@ export class HomeComponent implements OnInit {
 
   ngOnInit () {
   }
+
+  // Event
+  navToPage () {
+    this.routerExtensions.navigate(['/login'], {
+      transition: {
+        name: 'slideRight',
+        duration: 300,
+        curve: 'easeInOut'
+      }
+    });
+  }
 }

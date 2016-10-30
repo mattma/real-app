@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { NativeScriptModule } from 'nativescript-angular/platform';
 import { NativeScriptHttpModule } from 'nativescript-angular/http';
 import { NativeScriptRouterModule } from 'nativescript-angular/router';
 
@@ -7,6 +8,7 @@ import { routes } from './home.routes';
 
 @NgModule({
   imports: [
+    NativeScriptModule,
     NativeScriptHttpModule,
     NativeScriptRouterModule,
     routes
