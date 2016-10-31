@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { topmost } from "ui/frame";
-import { isIOS } from "platform";
+import { topmost } from 'ui/frame';
+import { isIOS } from 'platform';
 
 @Component({
   selector: 'real-app',
