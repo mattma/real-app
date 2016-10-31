@@ -27,10 +27,7 @@ $btn-link-disabled-color: $gray-light !default;
 
 @import './_bootstrap-map.scss';
 
-@import './core.light.ios.scss';
-@import './core.light.android.scss';
-
-@import 'assets/styles/nova/app.scss';
+@import 'assets/styles/app.scss';
 
 // @import url('~/platform.css');
 

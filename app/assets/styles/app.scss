@@ -1,3 +1,4 @@
+@import 'assets/styles/variables.scss';
 @import 'assets/styles/nova/action-bar.scss';
 @import 'assets/styles/nova/text.scss';
 @import 'assets/styles/nova/button.scss';
@@ -10,17 +11,19 @@
 @import 'assets/styles/nova/checkbox.scss';
 @import 'assets/styles/nova/radio-button.scss';
 @import 'assets/styles/nova/activity-indicator.scss';
+@import 'assets/styles/nova/login.scss';
+@import 'assets/styles/nova/side-drawer.scss';
 
 textfield {
   font-size: 14;
 }
 
 .fa {
-  font-family: 'FontAwesome', fontawesome-webfont;
+  font-family: FontAwesome, fontawesome-webfont;
 }
 
 .fa-large {
-  font-family: 'FontAwesome', FontAwesome;
+  font-family: FontAwesome, FontAwesome;
   font-size: 26;
 }
 
@@ -60,4 +63,47 @@ textfield {
 .debug {
   border-width: 1;
   border-color: red;
+}
+
+// progress.scss
+.progress {
+  color: $accent;
+  background-color: $grey-background;
+}
+
+// segmnented-bar.scss
+.segmented-bar {
+  font-size: 13;
+}
+
+// slider.scss
+.slider {
+  background-color: $accent;
+
+  &[isEnabled=false] {
+    background-color: $grey;
+    color: $grey;
+  }
+}
+
+// switch.scss
+.switch {
+  &[checked=true] {
+    background-color: $accent;
+  }
+
+  &[checked=true][isEnabled=false] {
+    background-color: $grey;
+    color: $white;
+  }
+
+  &[isEnabled=false] {
+    background-color: $grey;
+    color: $grey;
+  }
+}
+
+// tab.scss
+.tab-view {
+  color: $secondary;
 }

@@ -1,4 +1,11 @@
+@import 'assets/styles/variables.scss';
 @import 'assets/styles/nova/colors.scss';
+
+.activity-indicator {
+  color: $accent;
+  width: 30;
+  height: 30;
+}
 
 .activity-indicator-light {
   color: #4CD964;
