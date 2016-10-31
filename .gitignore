@@ -2,7 +2,6 @@
 hooks/
 lib/
 platforms/
-app/_bootstrap-map.scss
 
 # compiled output
 app/**/*.css
