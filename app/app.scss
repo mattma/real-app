@@ -3,6 +3,32 @@
 
 // Map NS theme variables to variables form the boothstrap v4 theme
 
+$text-muted: #818a91 !default;
+$disabled: $text-muted !default;
+
+$gray-dark: #373a3c !default;
+$gray: #55595c !default;
+$gray-light: #818a91 !default;
+$gray-lighter: #eceeef !default;
+$gray-lightest: #f7f7f9 !default;
+
+$brand-primary: #0275d8 !default;
+$brand-success: #5cb85c !default;
+$brand-info: #5bc0de !default;
+$brand-warning: #f0ad4e !default;
+$brand-danger: #d9534f !default;
+$brand-inverse: $gray-dark !default;
+
+$btn-primary-color: #fff !default;
+$btn-primary-bg: $brand-primary !default;
+$btn-primary-border: $btn-primary-bg !default;
+
+$btn-secondary-color: $gray-dark !default;
+$btn-secondary-bg: #fff !default;
+$btn-secondary-border: #ccc !default;
+
+$btn-link-disabled-color: $gray-light !default;
+
 // Colors
 $black: #000 !default;
 $white: #fff !default;
@@ -33,32 +59,6 @@ $btn-color-disabled: $btn-link-disabled-color !default;
 // $btn-padding-y: 10 !default;
 // $btn-margin-x:	16 !default;
 // $btn-margin-y:	8 !default;
-
-$text-muted: #818a91 !default;
-$disabled: $text-muted !default;
-
-$gray-dark: #373a3c !default;
-$gray: #55595c !default;
-$gray-light: #818a91 !default;
-$gray-lighter: #eceeef !default;
-$gray-lightest: #f7f7f9 !default;
-
-$brand-primary: #0275d8 !default;
-$brand-success: #5cb85c !default;
-$brand-info: #5bc0de !default;
-$brand-warning: #f0ad4e !default;
-$brand-danger: #d9534f !default;
-$brand-inverse: $gray-dark !default;
-
-$btn-primary-color: #fff !default;
-$btn-primary-bg: $brand-primary !default;
-$btn-primary-border: $btn-primary-bg !default;
-
-$btn-secondary-color: $gray-dark !default;
-$btn-secondary-bg: #fff !default;
-$btn-secondary-border: #ccc !default;
-
-$btn-link-disabled-color: $gray-light !default;
 
 @import 'assets/styles/app.scss';
 
