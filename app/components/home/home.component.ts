@@ -8,7 +8,7 @@ import { RouterExtensions } from 'nativescript-angular/router';
 @Component({
   selector: 'real-home',
   templateUrl: 'components/home/home.component.html',
-  // styleUrls: ['components/home/home-common.css']
+  styleUrls: ['components/home/home-common.css']
 })
 export class HomeComponent implements OnInit {
   constructor (private routerExtensions: RouterExtensions) {
