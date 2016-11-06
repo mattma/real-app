@@ -22,17 +22,17 @@
     background-color: transparent;
 
     &.input-border {
-      border-width:1;
-      border-color:$grey;
+      border-width: 1;
+      border-color: $grey;
       border-radius: 2;
-      padding:16;
+      padding: 16;
     }
 
     &.input-rounded {
-      border-width:1;
-      border-color:$grey;
+      border-width: 1;
+      border-color: $grey;
       border-radius: 28;
-      padding:16;
+      padding: 16;
     }
   }
 
@@ -40,8 +40,8 @@
     padding: 16 8 16 8;
 
     .label {
-      font-size:12;
-      color:$grey;
+      font-size: 12;
+      color: $grey;
     }
 
     .input {
@@ -58,14 +58,14 @@
 
     &.input-sides {
       .label {
-        font-size:18;
+        font-size: 18;
         margin: 0 0 8 0;
       }
     }
   }
 
   .input-inset {
-    background-color: #EEEEEE;
+    background-color: $border-lightest-color;
     border-radius: 2;
     padding: 8;
   }
@@ -73,12 +73,12 @@
   .input-label {
     font-size: 18;
     padding: 4 0 5 0;
-    color: #444;
+    color: $text-color;
   }
 }
 
 .form-inset {
   margin: 10;
   border-width: 1;
-  border-color: #DDDDDD;
+  border-color: $border-lighter-color;
 }

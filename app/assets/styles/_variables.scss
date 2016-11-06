@@ -18,6 +18,7 @@ $brand-inverse: $grey-dark !default;
 
 $black: #000 !default;
 $white: #fff !default;
+$green: #4CD964 !default;
 $base: $white !default;
 $charcoal: #303030 !default;
 
@@ -28,6 +29,10 @@ $disabled: $text-muted !default;
 $color-light: $white;
 $color-accent: #FF404B;
 $color-dark: #243044;
+
+$border-light-color: #b2b2b2;
+$border-lighter-color: #DDDDDD;
+$border-lightest-color: #EEEEEE;
 
 // Button Color Set
 $btn-primary-color: #fff !default;
@@ -53,7 +58,8 @@ $secondary: lighten($black, 46%) !default;
 $disabled: lighten($black, 62%) !default;
 $accent: #30bcff !default;
 
-$text-color: $primary !default;
+$text-color: $secondary !default;
+$text-primary-color: $primary !default;
 
 // Dark Theme Colors
 //$background: #303030 !default;
@@ -84,27 +90,3 @@ $enable-transitions: false !default;
 // $btn-padding-y: 10 !default;
 // $btn-margin-x:	16 !default;
 // $btn-margin-y:	8 !default;
-
-.background-color-light {
-  background-color: $color-light;
-}
-
-.background-color-accent {
-  background-color: $color-accent;
-}
-
-.background-color-dark {
-  background-color: $color-dark;
-}
-
-.color-light {
-  color: black;
-}
-
-.color-accent {
-  color: $color-accent;
-}
-
-.color-dark {
-  color: $color-dark;
-}

@@ -108,3 +108,28 @@ textfield {
 .tab-view {
   color: $secondary;
 }
+
+// Color styles
+.background-color-light {
+  background-color: $color-light;
+}
+
+.background-color-accent {
+  background-color: $color-accent;
+}
+
+.background-color-dark {
+  background-color: $color-dark;
+}
+
+.color-light {
+  color: black;
+}
+
+.color-accent {
+  color: $color-accent;
+}
+
+.color-dark {
+  color: $color-dark;
+}

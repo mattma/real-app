@@ -1,3 +1,5 @@
+@import "assets/styles/nova/mixins/border-radius.scss";
+
 // Button sizes
 
 @mixin button-base($color, $padding-y, $padding-x,$margin-y, $margin-x, $font-size, $border-radius, $border-width){

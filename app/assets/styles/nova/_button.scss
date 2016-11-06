@@ -1,6 +1,5 @@
-@import 'assets/styles/mixins.scss';
-
 @import 'assets/styles/variables.scss';
+@import "assets/styles/nova/mixins/buttons";
 
 .button {
   padding: 10 12 10 10;
@@ -29,7 +28,7 @@
 .button-light {
   background-color: $color-light;
   color: $color-accent;
-  border-color: #b2b2b2;
+  border-color: $border-light-color;
   border-width: 1;
 }
 
