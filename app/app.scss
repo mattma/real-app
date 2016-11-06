@@ -1,21 +1,4 @@
-﻿@import 'assets/styles/app.scss';
+﻿// Includes all application related classes
+@import 'assets/styles/app.scss';
 
 // @import url('~/platform.css');
-
-.action-bar-dark {
-  background-color: rgb(40, 53, 102);
-
-  .title {
-    color: white;
-
-    font-size: 16;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-
-  Button {
-    margin: 0 12 0 12;
-
-    font-size: 18;
-  }
-}

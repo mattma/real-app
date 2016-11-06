@@ -1,5 +1,14 @@
 @import 'assets/styles/variables.scss';
 
+.slider {
+  background-color: $accent;
+
+  &[isEnabled=false] {
+    background-color: $grey;
+    color: $grey;
+  }
+}
+
 .slider-light {
   background-color: $color-light;
 }

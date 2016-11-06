@@ -28,6 +28,19 @@ navigation-button {
 }
 
 .action-bar-dark {
-  background-color: $color-dark;
-  color: $white;
+  background-color: $blue-dark;
+
+  .title {
+    color: $white;
+
+    font-size: 16;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  Button {
+    margin: 0 12 0 12;
+
+    font-size: 18;
+  }
 }

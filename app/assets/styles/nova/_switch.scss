@@ -1,5 +1,21 @@
 @import 'assets/styles/variables.scss';
 
+.switch {
+  &[checked=true] {
+    background-color: $accent;
+  }
+
+  &[checked=true][isEnabled=false] {
+    background-color: $grey;
+    color: $white;
+  }
+
+  &[isEnabled=false] {
+    background-color: $grey;
+    color: $grey;
+  }
+}
+
 .switch-accent {
   background-color: $color-accent;
 }
