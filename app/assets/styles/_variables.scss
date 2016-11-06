@@ -25,6 +25,10 @@ $error: $brand-danger !default;
 $text-muted: #818a91 !default;
 $disabled: $text-muted !default;
 
+$color-light: $white;
+$color-accent: #FF404B;
+$color-dark: #243044;
+
 // Button Color Set
 $btn-primary-color: #fff !default;
 $btn-primary-bg: $brand-primary !default;
@@ -80,3 +84,27 @@ $enable-transitions: false !default;
 // $btn-padding-y: 10 !default;
 // $btn-margin-x:	16 !default;
 // $btn-margin-y:	8 !default;
+
+.background-color-light {
+  background-color: $color-light;
+}
+
+.background-color-accent {
+  background-color: $color-accent;
+}
+
+.background-color-dark {
+  background-color: $color-dark;
+}
+
+.color-light {
+  color: black;
+}
+
+.color-accent {
+  color: $color-accent;
+}
+
+.color-dark {
+  color: $color-dark;
+}
