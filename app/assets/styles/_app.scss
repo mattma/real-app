@@ -99,3 +99,10 @@
 .color-dark {
   color: $color-dark;
 }
+
+// Background images
+.bg-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
