@@ -1,3 +1,5 @@
+@import 'assets/styles/variables.scss';
+
 .home-bg {
   background-image: url("res://home-bg");
 }
@@ -14,11 +16,46 @@
 
 .home-promotion-section {
   image {
-    margin-left: 40;
+    margin: 0 0 0 40;
   }
 }
 
+$circle-size: 60;
+$ring-size: 76;
+
 .home-button-section {
+  GridLayout {
+    margin-top: -50;
+  }
 
+  .ring-shadow {
+    width: $ring-size;
+    height: $ring-size;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: $ring-size / 2;
+  }
+
+  .btn {
+    width: $circle-size;
+    height: $circle-size;
+    border-radius: $circle-size / 2;
+
+    background-color: $white;
+  }
+
+  .btn-remove {
+    button {
+      font-size: 36;
+      color: rgb(236, 3, 63);
+    }
+  }
+
+  .btn-heart {
+    button {
+      margin-top: 3;
+
+      font-size: 30;
+      color: rgb(221, 49, 247);
+    }
+  }
 }
-

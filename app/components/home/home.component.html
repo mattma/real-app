@@ -14,20 +14,34 @@
   <StackLayout class="home-shoutout" row="0">
     <Label class="p" text="Find your real dates for real! and meet up safely" horizontalAlignment="center"></Label>
   </StackLayout>
+
   <StackLayout class="home-promotion-section" row="1">
     <Image src="res://home-promotion"></Image>
   </StackLayout>
+
   <StackLayout class="home-button-section" row="2">
-    <GridLayout columns="*, *, *">
-      <StackLayout col="0">
-        <Button text="&#xf00d;" class="fa"></Button>
-      </StackLayout>
-      <StackLayout col="1">
-        <Image src="res://icon-key-info"></Image>
-      </StackLayout>
-      <StackLayout col="2">
-        <Button text="&#xf004;" class="fa"></Button>
-      </StackLayout>
+    <GridLayout columns="*, auto, *">
+      <GridLayout col="0">
+        <StackLayout class="ring-shadow">
+          <StackLayout class="btn btn-remove">
+            <Button text="&#xf00d;" class="fa" horizontalAlignment="center" verticalAlignment="center"></Button>
+          </StackLayout>
+        </StackLayout>
+      </GridLayout>
+      <GridLayout col="1">
+        <StackLayout class="ring-shadow">
+          <StackLayout class="btn btn-key">
+            <Image src="res://icon-key-info" scaleX="0.7" scaleY="0.7" horizontalAlignment="center" verticalAlignment="center"></Image>
+          </StackLayout>
+        </StackLayout>
+      </GridLayout>
+      <GridLayout col="2">
+        <StackLayout class="ring-shadow">
+          <StackLayout class="btn btn-heart">
+            <Button text="&#xf004;" class="fa" horizontalAlignment="center" verticalAlignment="center"></Button>
+          </StackLayout>
+        </StackLayout>
+      </GridLayout>
     </GridLayout>
   </StackLayout>
 </GridLayout>
