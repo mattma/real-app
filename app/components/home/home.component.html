@@ -1,17 +1,22 @@
 <ActionBar class="action-bar-dark">
   <ActionItem ios.position="left" (tap)="navToPage()">
-    <Button text="&#xf007;" class="fa"></Button>
+    <Image src="res://icon-user" scaleX="0.6" scaleY="0.6"></Image>
   </ActionItem>
   <StackLayout>
     <Image src="res://app-logo" scaleX="0.7" scaleY="0.7"></Image>
   </StackLayout>
   <ActionItem ios.position="right" android.position="popup">
-    <Button text="&#xf004;" class="fa"></Button>
+    <Image src="res://icon-love-arrow" scaleX="0.7" scaleY="0.7"></Image>
   </ActionItem>
 </ActionBar>
 
-<GridLayout class="bg-image">
-  <StackLayout>
+<GridLayout class="bg-image home-bg" rows="auto, auto, *">
+  <StackLayout class="home-shoutout" row="0">
     <Label class="p" text="Find your real dates for real! and meet up safely" horizontalAlignment="center"></Label>
+  </StackLayout>
+  <StackLayout class="home-promotion-section" row="1">
+    <Image src="res://home-promotion"></Image>
+  </StackLayout>
+  <StackLayout class="bg-image" row="2">
   </StackLayout>
 </GridLayout>

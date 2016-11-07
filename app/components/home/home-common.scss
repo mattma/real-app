@@ -1,5 +1,19 @@
-.bg-image {
+.home-bg {
   background-image: url("res://home-bg");
+}
+
+.home-shoutout {
+  height: 120;
+
+  label {
+    margin-top: 70;
+  }
+}
+
+.home-promotion-section {
+  image {
+    margin-left: 40;
+  }
 }
 
 Label {
