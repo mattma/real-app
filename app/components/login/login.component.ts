@@ -22,18 +22,8 @@ export class LoginComponent implements OnInit {
   private user: User;
   private isLoggedIn: boolean = true;
 
-  constructor (private router: Router, private page: Page, private loginService: LoginService) {
-    this.user = new User();
-  }
-
-  private toggleDisplay () {
-    this.isLoggedIn = !this.isLoggedIn;
-
-    const container: View = this.container.nativeElement;
-    container.animate({
-      backgroundColor: this.isLoggedIn ? new Color('white') : new Color('#301217'),
-      duration: 200
-    });
+  constructor (private page: Page, private loginService: LoginService) {
+    // this.user = new User();
   }
 
   private login (auth: string) {
@@ -48,20 +38,8 @@ export class LoginComponent implements OnInit {
     //   );
   }
 
-  private signUp () {
-    this.loginService.register(this.user)
-      .subscribe(
-        (user: User) => {
-          console.log(`${user.email} was successfully created.`);
-          this.toggleDisplay();
-        },
-        (err: Error) => console.log(err)
-      );
-  }
-
   ngOnInit () {
     this.page.backgroundSpanUnderStatusBar = true;
-    // this.page.actionBarHidden = true;
-    // this.page.backgroundImage = 'res://bg_login';
+    this.page.actionBarHidden = true;
   }
 }
