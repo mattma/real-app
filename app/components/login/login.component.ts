@@ -36,15 +36,16 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  private login () {
-    this.loginService.login(this.user)
-      .subscribe(
-        (user: User) => {
-          console.log('successfully logged in');
-          // this.router.navigate(['/list']
-        },
-        (err: Error) => console.log(err)
-      );
+  private login (auth: string) {
+    console.log('auth: ', auth);
+    // this.loginService.login(this.user)
+    //   .subscribe(
+    //     (user: User) => {
+    //       console.log('successfully logged in');
+    //       // this.router.navigate(['/list']
+    //     },
+    //     (err: Error) => console.log(err)
+    //   );
   }
 
   private signUp () {
@@ -56,14 +57,6 @@ export class LoginComponent implements OnInit {
         },
         (err: Error) => console.log(err)
       );
-  }
-
-  public submit () {
-    if (this.isLoggedIn) {
-      this.login();
-    } else {
-      this.signUp();
-    }
   }
 
   ngOnInit () {

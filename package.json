@@ -26,7 +26,10 @@
     "android"
   ],
   "nativescript": {
-    "id": "io.mattma.ngstarter"
+    "id": "io.mattma.ngstarter",
+    "tns-ios": {
+      "version": "2.4.1"
+    }
   },
   "scripts": {
     "build": "npm run build:ios && npm run build:android",
