@@ -63,6 +63,38 @@ Use UniCode to represent an icon. `&#x ;` wrap the actual UniCode in text proper
 <Button text="&#xf14b;" class="ion"></Button>
 ```
 
+## Upgrade Path
+
+- Upgrade `NativeScript` binary (optional)
+
+You do not need to update the binary every time. If I upgrade our project to a newer version of `NativeScript` binary, you need to do this step.
+
+Note: Open terminal app, execute the command below. Then follow the on-screen questionnaire, it has many questions that you need to answer. In general, it will take around 3 to 5 minutes, so please be patient.
+
+```bash
+npm install -g nativescript
+```
+
+- Get latest application
+
+Note: Anything with `#` is the command description, you should copy the command and paste into `terminal` app to execute it one by one.
+
+```bash
+# It should be whatever the folder that contains the application
+cd ~/desktop/client
+
+# Get the latest commit from Github repository
+git pull origin master
+
+# Cleanup the folder, always start from the clean state
+npm run clean
+
+# Install all required packages
+yarn
+
+# Start the iOS simulator. Application should be bootstrapped and opened in your iOS simulator
+npm start
+```
 
 ## Running unit tests
 
