@@ -1,14 +1,13 @@
 <GridLayout class="bg-image login-bg">
   <StackLayout class="login-group" verticalAlignment="bottom" rows="*, *">
-    <StackLayout class="btn-facebook" row="0" (tap)="login('facebook')" columns="100, *">
-      <GridLayout col="0">
-        <Button class="fa" text="&#xf230;"></Button>
-      </GridLayout>
-      <Label class="p center" text="Sign in with Facebook" col="1"></Label>
-    </StackLayout>
-    <GridLayout class="btn-linkedin" row="1" (tap)="login('linkedin')">
-      <Button class="fa" text="&#xf08c;"></Button>
-      <Label class="p center" text="Sign in with Linkedin"></Label>
+    <GridLayout class="login-group-row btn-facebook" columns="*, 2*" row="1" (tap)="login('facebook')">
+      <Button class="fa" text="&#xf230;" horizontalAlignment="right"></Button>
+      <Label class="p" text="Sign in with Facebook" col="1" verticalAlignment="center"></Label>
+    </GridLayout>
+
+    <GridLayout class="login-group-row btn-linkedin" columns="*, 2*" row="1" (tap)="login('linkedin')">
+      <Button col="0" class="fa" text="&#xf08c;" horizontalAlignment="right"></Button>
+      <Label class="p" text="Sign in with Linkedin" col="1" verticalAlignment="center"></Label>
     </GridLayout>
   </StackLayout>
 </GridLayout>

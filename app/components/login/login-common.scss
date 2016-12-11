@@ -9,29 +9,27 @@
   height: 120;
 }
 
-StackLayout {
+.login-group-row {
   width: 100%;
   height: 60;
-  margin: 0;
 
   Label {
     width: 100%;
     height: 60;
+    padding-top: 12;
 
-    font-size: 17;
+    font-size: 14;
     font-weight: 600;
-    text-align: left;
-    vertical-align: center;
     color: $white;
   }
 
   .fa {
-    width: 24;
-    height: 24;
+    width: 18;
+    height: 18;
+    margin-right: 8;
     border-radius: 5;
-    // padding-right: 12;
 
-    font-size: 28;
+    font-size: 22;
     background-color: $white;
   }
 }
@@ -50,8 +48,6 @@ StackLayout {
   background-color: rgba(0, 155, 223, 0.8);
 
   .fa {
-    margin-right: 100;
-
     color: rgb(2, 116, 179);
   }
 }
