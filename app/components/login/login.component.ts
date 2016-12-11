@@ -39,9 +39,12 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit () {
-    this.page.backgroundSpanUnderStatusBar = true;
     this.page.actionBarHidden = true;
 
+    // this command will allow Page image bleed into status bar
+    // @TODO background image is repeated, need to figure out how to stop repeated
+    // currently use the css to control the background image
+    this.page.backgroundSpanUnderStatusBar = true;
     // this.page.backgroundImage = 'res://login-bg';
   }
 }
