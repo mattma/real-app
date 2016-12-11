@@ -5,9 +5,7 @@ import { isIOS } from 'platform';
 @Component({
   selector: 'real-app',
   template: `
-    <GridLayout>
-      <page-router-outlet></page-router-outlet>
-    </GridLayout>
+    <page-router-outlet></page-router-outlet>
   `
 })
 export class AppComponent implements OnInit {
