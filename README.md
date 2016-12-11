@@ -35,15 +35,18 @@ pod --version
 
 ```bash
 # Step 1: Clone the repo
-git clone https://github.com/mattma/me-client
+git clone https://github.com/mattma/me-client ./For\ Real
 
 # Step 2: Go into the repo folder
-cd me-client
+cd For\ Real/
 
 # Step 3: Install module dependencies
 yarn
 
-# Step 4: Launch in iOS simulator
+# Step 4: Create project on iOS, copy templatt files, load up medias
+tns prepare ios
+
+# Step 5: Launch in iOS simulator
 npm start
 ```
 

@@ -15,9 +15,24 @@ StackLayout {
   margin: 0;
 
   Label {
-    color: $white;
+    width: 100%;
+    height: 60;
+
     font-size: 17;
     font-weight: 600;
+    text-align: left;
+    vertical-align: center;
+    color: $white;
+  }
+
+  .fa {
+    width: 24;
+    height: 24;
+    border-radius: 5;
+    // padding-right: 12;
+
+    font-size: 28;
+    background-color: $white;
   }
 }
 
@@ -26,10 +41,7 @@ StackLayout {
 
   background-color: rgba(90, 126,201, 0.8);
 
-  Button {
-    width: 20;
-    height: 20;
-
+  .fa {
     color: rgb(60, 90, 153);
   }
 }
@@ -37,7 +49,9 @@ StackLayout {
 .btn-linkedin {
   background-color: rgba(0, 155, 223, 0.8);
 
-  Button {
+  .fa {
+    margin-right: 100;
+
     color: rgb(2, 116, 179);
   }
 }
