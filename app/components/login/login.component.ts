@@ -1,7 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Page } from 'ui/page';
-import { Color } from 'color';
+import { RouterExtensions } from 'nativescript-angular';
 import { View } from 'ui/core/view';
 // import { TextField } from "ui/text-field";
 
@@ -22,12 +22,13 @@ export class LoginComponent implements OnInit {
   private user: User;
   private isLoggedIn: boolean = true;
 
-  constructor (private page: Page, private loginService: LoginService) {
+  constructor (private page: Page, private routerExtensions: RouterExtensions, private loginService: LoginService) {
     // this.user = new User();
   }
 
   private login (auth: string) {
     console.log('auth: ', auth);
+    this.routerExtensions.navigate(['/training']);
     // this.loginService.login(this.user)
     //   .subscribe(
     //     (user: User) => {

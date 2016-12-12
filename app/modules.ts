@@ -5,6 +5,7 @@ import { routes } from './app.routes';
 
 import { HomeModule } from './components/home/home.module';
 import { LoginModule } from './components/login/login.module';
+import { TrainingModule } from './components/training/training.module';
 
 export const ApplicationModules = [
   NativeScriptModule,
@@ -12,7 +13,8 @@ export const ApplicationModules = [
   NativeScriptRouterModule.forRoot(routes),
 
   HomeModule,
-  LoginModule
+  LoginModule,
+  TrainingModule,
 ];
 
 export const ApplicationServices = [];
