@@ -1,6 +1,16 @@
-<GridLayout class="bg-image login-bg">
-  <GridLayout class="login-group-row btn-linkedin" columns="*, 2*">
-    <Button col="0" class="fa" text="&#xf08c;" horizontalAlignment="right"></Button>
-    <Label class="p" text="Sign in with Linkedin" col="1" verticalAlignment="center"></Label>
-  </GridLayout>
+<GridLayout class="bg-image training-bg">
+  <StackLayout class="training-group" verticalAlignment="bottom" rows="*, *">
+    <StackLayout class="training-info" row="0">
+      <Label class="h3 center" text="No More Netfilx and Chill"></Label>
+      <Label class="p center" textWrap="true"
+             text="Find down-to-earth people near your location and Foreal will help you to meet up safely"
+             verticalAlignment="center"></Label>
+    </StackLayout>
+
+    <GridLayout class="training-topics" columns="auto, *, auto">
+      <Button col="0" class="ion" text="&#xf124;" horizontalAlignment="center"></Button>
+      <Label col="1" class="p" text="Sign in with Linkedin" verticalAlignment="center"></Label>
+      <Button col="2" class="ion" text="&#xf125;" horizontalAlignment="center"></Button>
+    </GridLayout>
+  </StackLayout>
 </GridLayout>

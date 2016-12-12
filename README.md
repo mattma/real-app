@@ -47,7 +47,10 @@ yarn
 tns prepare ios
 
 # Step 5: Launch in iOS simulator
-npm start
+tns run ios --emulator
+
+# Development ONLY, live reload and code change on the fly
+# npm start
 ```
 
 ## Font Icons support
