@@ -1,5 +1,33 @@
 @import 'assets/styles/variables.scss';
 
+.slide-1 {
+  background-color: darkslateblue;
+}
+
+.slide-2 {
+  background-color: darkcyan;
+}
+
+.slide-3 {
+  background-color: darkgreen;
+}
+
+.slide-4 {
+  background-color: darkgoldenrod;
+}
+
+.slide-5 {
+  background-color: darkslategray;
+}
+
+Label {
+  text-align: center;
+  width: 100%;
+  font-size: 35;
+  margin-top: 35;
+  color: #fff;
+}
+
 .training-bg {
   background-image: url("res://training-bg");
   background-repeat: no-repeat;
