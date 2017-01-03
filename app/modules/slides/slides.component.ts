@@ -44,14 +44,14 @@ enum cancellationReason {
       <ng-content></ng-content>
       
       <GridLayout *ngIf="pageIndicators" orientation="horizontal" class="footer">
-        <Button *ngIf="hasPrevious" class="ion arrow-left" text="&#xf124;" horizontalAlignment="left"></Button>
+        <Button *ngIf="hasPrevious" class="ion arrow-left" text="&#xf124;" horizontalAlignment="left" (tap)="onSlidingDir('previous')"></Button>
         <StackLayout orientation="horizontal">
           <Label *ngFor="let indicator of indicators"
             [class.slide-indicator-active]="indicator.active == true"
             [class.slide-indicator-inactive]="indicator.active == false"
           ></Label>
         </StackLayout>
-        <Button *ngIf="hasNext" class="ion arrow-right" text="&#xf125;" horizontalAlignment="right"></Button>
+        <Button *ngIf="hasNext" class="ion arrow-right" text="&#xf125;" horizontalAlignment="right" (tap)="onSlidingDir('next')"></Button>
         <Label *ngIf="!hasNext" class="skip-training" text="Done" (tap)="skipTraining()"></Label>
       </GridLayout>
     </AbsoluteLayout>
@@ -116,6 +116,28 @@ export class SlidesComponent implements OnInit, AfterViewInit {
 
   ngOnDestroy () {
 
+  }
+
+  // Navigate between training content
+  private onSlidingDir(dir: string) {
+    if (dir === 'previous') {
+      this.currentSlide.left.slide.layout.translateX = -this.pageWidth * 2;
+      this.currentSlide = this.currentSlide.left;
+    }
+
+    this.currentSlide.slide.layout.translateX = -this.pageWidth;
+
+    if (dir === 'next') {
+      this.currentSlide.right.slide.layout.translateX = 0;
+      this.currentSlide = this.currentSlide.right;
+    }
+
+    // sets up each slide so that they are positioned to transition either way.
+    this.positionSlides(this.currentSlide);
+
+    if (this.pageIndicators) {
+      this.setActivePageIndicator(this.currentSlide.index);
+    }
   }
 
   // footer stuff
