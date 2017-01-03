@@ -44,12 +44,12 @@ enum cancellationReason {
       <ng-content></ng-content>
       
       <StackLayout *ngIf="pageIndicators" orientation="horizontal" class="footer">
-        <Button class="ion arrow" text="&#xf124;" horizontalAlignment="left"></Button>
+        <Button class="ion arrow-left" text="&#xf124;" horizontalAlignment="left"></Button>
         <Label *ngFor="let indicator of indicators"
           [class.slide-indicator-active]="indicator.active == true"
           [class.slide-indicator-inactive]="indicator.active == false"
         ></Label>
-        <Button class="ion arrow" text="&#xf125;" horizontalAlignment="right"></Button>
+        <Button class="ion arrow-right" text="&#xf125;" horizontalAlignment="right"></Button>
       </StackLayout>
     </AbsoluteLayout>
 	`,
