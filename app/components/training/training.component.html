@@ -1,5 +1,5 @@
 <GridLayout>
-  <slides [loop]="false" [pageIndicators]="true">
+  <slides [loop]="false" [pageIndicators]="true" (onSkipTraining)="onSkipTraining()">
     <slide klass="slide-1 bg-image training-content">
       <Label class="h3 center" text="No More Netfilx and Chill"></Label>
       <Label class="p center" textWrap="true"

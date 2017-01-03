@@ -40,6 +40,14 @@
 
     text-align: right;
   }
+
+  .skip-training {
+    width: auto;
+    margin-left: 85%;
+
+    color: $text-primary-color;
+    font-weight: 700;
+  }
 }
 
 .slide-indicator-active {

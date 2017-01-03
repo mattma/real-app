@@ -1,6 +1,6 @@
 import {
   Component, OnInit, AfterViewInit, OnDestroy, ChangeDetectorRef, ViewEncapsulation,
-  forwardRef, ContentChildren, QueryList, Input
+  forwardRef, ContentChildren, QueryList, Input, Output, EventEmitter
 } from '@angular/core';
 
 import { SlideComponent } from './slide.component';
@@ -52,6 +52,7 @@ enum cancellationReason {
           ></Label>
         </StackLayout>
         <Button *ngIf="hasNext" class="ion arrow-right" text="&#xf125;" horizontalAlignment="right"></Button>
+        <Label *ngIf="!hasNext" class="skip-training" text="Done" (tap)="skipTraining()"></Label>
       </GridLayout>
     </AbsoluteLayout>
 	`,
@@ -65,6 +66,7 @@ export class SlidesComponent implements OnInit, AfterViewInit {
   @Input('pageHeight') pageHeight: number;
   @Input('loop') loop: boolean = false;
   @Input('pageIndicators') pageIndicators: boolean;
+  @Output() onSkipTraining: EventEmitter<null> = new EventEmitter<null>();
 
   private transitioning: boolean;
   private direction: direction = direction.none;
@@ -392,5 +394,10 @@ export class SlidesComponent implements OnInit, AfterViewInit {
 
       //this.triggerChangeEventLeftToRight();
     });
+  }
+
+  // Events
+  skipTraining () {
+    this.onSkipTraining.emit();
   }
 }
