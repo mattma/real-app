@@ -11,7 +11,7 @@ import { SlideComponent } from './slide.component';
   imports: [NativeScriptModule],
   declarations: [SlidesComponent, SlideComponent],
   providers: [],
-  exports: [SlidesComponent]
+  exports: [SlidesComponent, SlideComponent]
 })
 export class SlidesModule {
 }

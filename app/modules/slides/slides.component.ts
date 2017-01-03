@@ -38,7 +38,7 @@ enum cancellationReason {
     </AbsoluteLayout>
 	`,
 })
-export class SlidesComponent implements OnInit {
+export class SlidesComponent implements OnInit, AfterViewInit {
   @ContentChildren(forwardRef(() => SlideComponent)) slides: QueryList<SlideComponent>;
   @Input('pageWidth') pageWidth: number;
   @Input('pageHeight') pageHeight: number;

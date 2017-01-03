@@ -24,7 +24,6 @@ export class SlideComponent implements OnInit {
   }
 
   set slideWidth (width: number) {
-    console.log('slideWidth: ', width);
     this.layout.width = width;
   }
 
