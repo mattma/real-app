@@ -1191,9 +1191,9 @@ tns-core-modules-widgets@2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/tns-core-modules-widgets/-/tns-core-modules-widgets-2.4.0.tgz#95de9f147268e806d6cf6bc8761ca235dd194f73"
 
-tns-core-modules@2.4.1:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/tns-core-modules/-/tns-core-modules-2.4.1.tgz#da2a28dd7f9ff723dfb206aebfb2645e2087deb1"
+tns-core-modules@2.4.4:
+  version "2.4.4"
+  resolved "https://registry.yarnpkg.com/tns-core-modules/-/tns-core-modules-2.4.4.tgz#0a748ad373c3bd379a7a099fcbbc637aaa210644"
   dependencies:
     tns-core-modules-widgets "2.4.0"
 

@@ -7,7 +7,7 @@ import { LoginComponent } from './components/login/login.component';
 // import NotFound404Routes from './+not-found-404/not-found-404.routes';
 
 export const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/training' },
+  { path: '', pathMatch: 'full', redirectTo: '/login' },
   { path: 'login', component: LoginComponent },
   { path: 'training', component: TrainingComponent },
   // catch all route must be the last one defined

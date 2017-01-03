@@ -15,20 +15,21 @@ export class SlideComponent implements OnInit {
   @ViewChild('slideLayout') slideLayout: ElementRef;
   @Input('class') cssClass: string;
 
+  constructor () {
+    this.cssClass = this.cssClass ? this.cssClass : '';
+  }
+
+  get layout (): StackLayout {
+    return this.slideLayout.nativeElement;
+  }
+
   set slideWidth (width: number) {
+    console.log('slideWidth: ', width);
     this.layout.width = width;
   }
 
   set slideHeight (height: number | string) {
     this.layout.height = <any>height;
-  }
-
-  get layout (): StackLayout {
-    return this.slideLayout.nativeElement
-  }
-
-  constructor () {
-    this.cssClass = this.cssClass ? this.cssClass : '';
   }
 
   ngOnInit () {
