@@ -1,6 +1,6 @@
 import {
-  Component, OnInit, AfterViewInit, OnDestroy,
-  forwardRef, ViewChildren, ContentChildren, ElementRef, QueryList, Input
+  Component, OnInit, AfterViewInit, ViewEncapsulation, ChangeDetectorRef, OnDestroy,
+  forwardRef, ViewChild, ContentChildren, ElementRef, QueryList, Input
 } from '@angular/core';
 
 import { SlideComponent } from './slide.component';
@@ -10,6 +10,12 @@ import * as AnimationModule from 'ui/animation';
 import { AnimationCurve, Orientation } from 'ui/enums';
 import * as app from 'application';
 import { AbsoluteLayout } from 'ui/layouts/absolute-layout';
+import { StackLayout } from 'ui/layouts/stack-layout';
+import { Label } from 'ui/label';
+
+export interface IIndicators {
+  active: boolean;
+}
 
 export interface ISlideMap {
   slide: SlideComponent;
@@ -35,23 +41,34 @@ enum cancellationReason {
   template: `
     <AbsoluteLayout>
       <ng-content></ng-content>
+      
+      <StackLayout *ngIf="pageIndicators" #footer orientation="horizontal" class="footer">
+        <Label *ngFor="let indicator of indicators"
+          [class.slide-indicator-active]="indicator.active == true"
+          [class.slide-indicator-inactive]="indicator.active == false	"
+        ></Label>
+      </StackLayout>
     </AbsoluteLayout>
 	`,
+  styleUrls: ['modules/slides/slides.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
+
 export class SlidesComponent implements OnInit, AfterViewInit {
   @ContentChildren(forwardRef(() => SlideComponent)) slides: QueryList<SlideComponent>;
+  @ViewChild('footer') footer: ElementRef;
+
   @Input('pageWidth') pageWidth: number;
   @Input('pageHeight') pageHeight: number;
   @Input('loop') loop: boolean;
+  @Input('pageIndicators') pageIndicators: boolean;
 
   private transitioning: boolean;
   private direction: direction = direction.none;
 
+  indicators: IIndicators[];
   currentSlide: ISlideMap;
   _slideMap: ISlideMap[];
-
-  constructor () {
-  }
 
   get hasNext (): boolean {
     return !!this.currentSlide && !!this.currentSlide.right;
@@ -61,14 +78,19 @@ export class SlidesComponent implements OnInit, AfterViewInit {
     return !!this.currentSlide && !!this.currentSlide.left;
   }
 
+  constructor (private ref: ChangeDetectorRef) {
+    this.indicators = [];
+  }
+
   ngOnInit () {
     this.loop = this.loop ? this.loop : false;
+    this.pageIndicators = this.pageIndicators ? this.pageIndicators : false;
     this.pageWidth = this.pageWidth ? this.pageWidth : platform.screen.mainScreen.widthDIPs;
     this.pageHeight = this.pageHeight ? this.pageHeight : platform.screen.mainScreen.heightDIPs;
   }
 
   ngAfterViewInit () {
-    // loop through slides and setup height and width
+    // loop through slides and setup height and widith
     this.slides.forEach((slide: SlideComponent) => {
       AbsoluteLayout.setLeft(slide.layout, this.pageWidth);
       slide.slideWidth = this.pageWidth;
@@ -77,13 +99,54 @@ export class SlidesComponent implements OnInit, AfterViewInit {
 
     this.currentSlide = this.buildSlideMap(this.slides.toArray());
 
+    if (this.pageIndicators) {
+      this.buildFooter(this.slides.length);
+      this.setActivePageIndicator(0);
+    }
     if (this.currentSlide) {
       this.positionSlides(this.currentSlide);
       this.applySwipe(this.pageWidth);
     }
   }
 
-  // private  functions
+  ngOnDestroy () {
+
+  }
+
+  //footer stuff
+  private buildFooter (pageCount: number = 5): void {
+    const sections = (this.pageHeight / 6);
+    const footerSection = (<StackLayout>this.footer.nativeElement);
+
+    footerSection.marginTop = (sections * 5);
+    footerSection.height = sections;
+    footerSection.horizontalAlignment = 'center';
+
+    footerSection.clipToBounds = false;
+
+    footerSection.orientation = 'horizontal';
+
+    let index = 0;
+    while (index < pageCount) {
+      this.indicators.push({ active: false });
+      index++;
+    }
+  }
+
+  setActivePageIndicator (activeIndex: number) {
+    this.indicators.map((indicator: IIndicators, index: number) => {
+      if (index == activeIndex) {
+        indicator.active = true;
+      } else {
+        indicator.active = false;
+      }
+    });
+
+    this.indicators = [...this.indicators];
+    this.ref.detectChanges();
+  }
+
+  // private functions
   private setupPanel (slide: ISlideMap) {
     this.direction = direction.none;
     this.transitioning = false;
@@ -97,9 +160,9 @@ export class SlidesComponent implements OnInit, AfterViewInit {
     this.applySwipe(this.pageWidth);
     //}
 
-    // if (this.pageIndicators) {
-    // 	this.setActivePageIndicator(this.currentSlide.index);
-    // }
+    if (this.pageIndicators) {
+      this.setActivePageIndicator(this.currentSlide.index);
+    }
   }
 
   private positionSlides (slide: ISlideMap) {
@@ -107,9 +170,7 @@ export class SlidesComponent implements OnInit, AfterViewInit {
     if (slide.left != null && slide.left.slide != null) {
       slide.left.slide.layout.translateX = -this.pageWidth * 2;
     }
-
     slide.slide.layout.translateX = -this.pageWidth;
-
     if (slide.right != null && slide.right.slide != null) {
       slide.right.slide.layout.translateX = 0;
     }
@@ -127,14 +188,12 @@ export class SlidesComponent implements OnInit, AfterViewInit {
       duration: animationDuration,
       curve: AnimationCurve.easeOut
     });
-
     transition.push({
       target: slideMap.slide.layout,
       translate: { x: -this.pageWidth * 2, y: 0 },
       duration: animationDuration,
       curve: AnimationCurve.easeOut
     });
-
     let animationSet = new AnimationModule.Animation(transition, false);
 
     return animationSet.play();
@@ -152,17 +211,16 @@ export class SlidesComponent implements OnInit, AfterViewInit {
       duration: animationDuration,
       curve: AnimationCurve.easeOut
     });
-
     transition.push({
       target: slideMap.slide.layout,
       translate: { x: 0, y: 0 },
       duration: animationDuration,
       curve: AnimationCurve.easeOut
     });
-
     let animationSet = new AnimationModule.Animation(transition, false);
 
     return animationSet.play();
+
   }
 
   public applySwipe (pageWidth: number): void {
@@ -290,14 +348,12 @@ export class SlidesComponent implements OnInit, AfterViewInit {
 
   private buildSlideMap (slides: SlideComponent[]) {
     this._slideMap = [];
-
     slides.forEach((slide: SlideComponent, index: number) => {
       this._slideMap.push({
         slide: slide,
         index: index,
       });
     });
-
     this._slideMap.forEach((mapping: ISlideMap, index: number) => {
       if (this._slideMap[index - 1] != null)
         mapping.left = this._slideMap[index - 1];
@@ -338,6 +394,7 @@ export class SlidesComponent implements OnInit, AfterViewInit {
     //this.triggerStartEvent();
     this.showLeftSlide(this.currentSlide).then(() => {
       this.setupPanel(this.currentSlide.left);
+
       //this.triggerChangeEventLeftToRight();
     });
   }
