@@ -1,23 +1,19 @@
 @import 'assets/styles/variables.scss';
 
 .slide-1 {
-  background-color: darkslateblue;
+  background-image: url("res://training-bg-1");
 }
 
 .slide-2 {
-  background-color: darkcyan;
+  background-image: url("res://home-bg");
 }
 
 .slide-3 {
-  background-color: darkgreen;
+  background-image: url("res://training-bg-1");
 }
 
 .slide-4 {
-  background-color: darkgoldenrod;
-}
-
-.slide-5 {
-  background-color: darkslategray;
+  background-image: url("res://home-bg");
 }
 
 Label {

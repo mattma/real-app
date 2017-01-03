@@ -1,3 +1,5 @@
+@import 'assets/styles/variables.scss';
+
 @mixin slideIndicator ($size: 10, $color: #fff) {
   width: $size;
   height: $size;
@@ -17,10 +19,10 @@
 }
 
 .slide-indicator-active {
-  @include slideIndicator(10, black);
+  @include slideIndicator(10, $purple);
 }
 
 .slide-indicator-inactive {
-  @include slideIndicator(10, black);
+  @include slideIndicator(10, $purple);
   opacity: 0.4;
 }
