@@ -1,5 +1,5 @@
 import {
-  Component, OnInit, AfterViewInit, ViewEncapsulation, ChangeDetectorRef, OnDestroy,
+  Component, OnInit, AfterViewInit, ChangeDetectorRef, OnDestroy,
   forwardRef, ViewChild, ContentChildren, ElementRef, QueryList, Input
 } from '@angular/core';
 
@@ -45,13 +45,12 @@ enum cancellationReason {
       <StackLayout *ngIf="pageIndicators" #footer orientation="horizontal" class="footer">
         <Label *ngFor="let indicator of indicators"
           [class.slide-indicator-active]="indicator.active == true"
-          [class.slide-indicator-inactive]="indicator.active == false	"
+          [class.slide-indicator-inactive]="indicator.active == false"
         ></Label>
       </StackLayout>
     </AbsoluteLayout>
 	`,
-  styleUrls: ['modules/slides/slides.component.css'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['modules/slides/slides.component.css']
 })
 
 export class SlidesComponent implements OnInit, AfterViewInit {
@@ -60,7 +59,7 @@ export class SlidesComponent implements OnInit, AfterViewInit {
 
   @Input('pageWidth') pageWidth: number;
   @Input('pageHeight') pageHeight: number;
-  @Input('loop') loop: boolean;
+  @Input('loop') loop: boolean = false;
   @Input('pageIndicators') pageIndicators: boolean;
 
   private transitioning: boolean;
@@ -83,7 +82,6 @@ export class SlidesComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit () {
-    this.loop = this.loop ? this.loop : false;
     this.pageIndicators = this.pageIndicators ? this.pageIndicators : false;
     this.pageWidth = this.pageWidth ? this.pageWidth : platform.screen.mainScreen.widthDIPs;
     this.pageHeight = this.pageHeight ? this.pageHeight : platform.screen.mainScreen.heightDIPs;
@@ -103,6 +101,7 @@ export class SlidesComponent implements OnInit, AfterViewInit {
       this.buildFooter(this.slides.length);
       this.setActivePageIndicator(0);
     }
+
     if (this.currentSlide) {
       this.positionSlides(this.currentSlide);
       this.applySwipe(this.pageWidth);
@@ -113,7 +112,7 @@ export class SlidesComponent implements OnInit, AfterViewInit {
 
   }
 
-  //footer stuff
+  // footer stuff
   private buildFooter (pageCount: number = 5): void {
     const sections = (this.pageHeight / 6);
     const footerSection = (<StackLayout>this.footer.nativeElement);
@@ -348,12 +347,14 @@ export class SlidesComponent implements OnInit, AfterViewInit {
 
   private buildSlideMap (slides: SlideComponent[]) {
     this._slideMap = [];
+
     slides.forEach((slide: SlideComponent, index: number) => {
       this._slideMap.push({
         slide: slide,
         index: index,
       });
     });
+
     this._slideMap.forEach((mapping: ISlideMap, index: number) => {
       if (this._slideMap[index - 1] != null)
         mapping.left = this._slideMap[index - 1];
@@ -365,6 +366,7 @@ export class SlidesComponent implements OnInit, AfterViewInit {
       this._slideMap[0].left = this._slideMap[this._slideMap.length - 1];
       this._slideMap[this._slideMap.length - 1].right = this._slideMap[0];
     }
+
     return this._slideMap[0];
   }
 
