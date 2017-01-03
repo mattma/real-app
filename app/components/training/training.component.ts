@@ -16,6 +16,7 @@ export class TrainingComponent implements OnInit {
   }
 
   ngOnInit () {
+    this.page.backgroundSpanUnderStatusBar = true;
     this.page.actionBarHidden = true;
 
     // this command will allow Page image bleed into status bar
