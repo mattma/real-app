@@ -43,14 +43,16 @@ enum cancellationReason {
     <AbsoluteLayout>
       <ng-content></ng-content>
       
-      <StackLayout *ngIf="pageIndicators" orientation="horizontal" class="footer">
-        <Button class="ion arrow-left" text="&#xf124;" horizontalAlignment="left"></Button>
-        <Label *ngFor="let indicator of indicators"
-          [class.slide-indicator-active]="indicator.active == true"
-          [class.slide-indicator-inactive]="indicator.active == false"
-        ></Label>
-        <Button class="ion arrow-right" text="&#xf125;" horizontalAlignment="right"></Button>
-      </StackLayout>
+      <GridLayout *ngIf="pageIndicators" orientation="horizontal" class="footer">
+        <Button *ngIf="hasPrevious" class="ion arrow-left" text="&#xf124;" horizontalAlignment="left"></Button>
+        <StackLayout orientation="horizontal">
+          <Label *ngFor="let indicator of indicators"
+            [class.slide-indicator-active]="indicator.active == true"
+            [class.slide-indicator-inactive]="indicator.active == false"
+          ></Label>
+        </StackLayout>
+        <Button *ngIf="hasNext" class="ion arrow-right" text="&#xf125;" horizontalAlignment="right"></Button>
+      </GridLayout>
     </AbsoluteLayout>
 	`,
   styleUrls: ['modules/slides/slides.component.css'],

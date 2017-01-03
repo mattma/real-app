@@ -17,8 +17,6 @@
   height: 10%;
   margin-top: 90%;
 
-  horizontal-align: center;
-
   background-color: $white;
 
   Button {
@@ -27,11 +25,19 @@
     color: $purple;
   }
 
+  StackLayout {
+    horizontal-align: center;
+  }
+
   .arrow-left {
+    margin-left: 5%;
+
     text-align: left;
   }
 
   .arrow-right {
+    margin-right: 5%;
+
     text-align: right;
   }
 }
