@@ -1,11 +1,12 @@
-import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef, ViewEncapsulation } from '@angular/core';
 import { StackLayout } from 'ui/layouts/stack-layout';
 import * as gestures from 'ui/gestures';
 
 @Component({
   selector: 'slide',
+  encapsulation: ViewEncapsulation.None,
   template: `
-    <StackLayout #slideLayout [class]="cssClass">
+    <StackLayout #slideLayout [ngClass]="klass">
       <ng-content></ng-content>
     </StackLayout>
 	`,
@@ -13,11 +14,7 @@ import * as gestures from 'ui/gestures';
 
 export class SlideComponent implements OnInit {
   @ViewChild('slideLayout') slideLayout: ElementRef;
-  @Input('class') cssClass: string;
-
-  constructor () {
-    this.cssClass = this.cssClass ? this.cssClass : '';
-  }
+  @Input() klass: string = '';
 
   get layout (): StackLayout {
     return this.slideLayout.nativeElement;

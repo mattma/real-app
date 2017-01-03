@@ -1,6 +1,6 @@
 import {
-  Component, OnInit, AfterViewInit, ChangeDetectorRef, OnDestroy,
-  forwardRef, ViewChild, ContentChildren, ElementRef, QueryList, Input
+  Component, OnInit, AfterViewInit, OnDestroy, ChangeDetectorRef, ViewEncapsulation,
+  forwardRef, ContentChildren, QueryList, Input
 } from '@angular/core';
 
 import { SlideComponent } from './slide.component';
@@ -38,24 +38,26 @@ enum cancellationReason {
 
 @Component({
   selector: 'slides',
+  encapsulation: ViewEncapsulation.None,
   template: `
     <AbsoluteLayout>
       <ng-content></ng-content>
       
-      <StackLayout *ngIf="pageIndicators" #footer orientation="horizontal" class="footer">
+      <StackLayout *ngIf="pageIndicators" orientation="horizontal" class="footer">
+        <Button class="ion arrow" text="&#xf124;" horizontalAlignment="left"></Button>
         <Label *ngFor="let indicator of indicators"
           [class.slide-indicator-active]="indicator.active == true"
           [class.slide-indicator-inactive]="indicator.active == false"
         ></Label>
+        <Button class="ion arrow" text="&#xf125;" horizontalAlignment="right"></Button>
       </StackLayout>
     </AbsoluteLayout>
 	`,
-  styleUrls: ['modules/slides/slides.component.css']
+  styleUrls: ['modules/slides/slides.component.css'],
 })
 
 export class SlidesComponent implements OnInit, AfterViewInit {
   @ContentChildren(forwardRef(() => SlideComponent)) slides: QueryList<SlideComponent>;
-  @ViewChild('footer') footer: ElementRef;
 
   @Input('pageWidth') pageWidth: number;
   @Input('pageHeight') pageHeight: number;
@@ -88,7 +90,7 @@ export class SlidesComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit () {
-    // loop through slides and setup height and widith
+    // loop through slides and setup height and width
     this.slides.forEach((slide: SlideComponent) => {
       AbsoluteLayout.setLeft(slide.layout, this.pageWidth);
       slide.slideWidth = this.pageWidth;
@@ -114,17 +116,6 @@ export class SlidesComponent implements OnInit, AfterViewInit {
 
   // footer stuff
   private buildFooter (pageCount: number = 5): void {
-    const sections = (this.pageHeight / 6);
-    const footerSection = (<StackLayout>this.footer.nativeElement);
-
-    footerSection.marginTop = (sections * 5);
-    footerSection.height = sections;
-    footerSection.horizontalAlignment = 'center';
-
-    footerSection.clipToBounds = false;
-
-    footerSection.orientation = 'horizontal';
-
     let index = 0;
     while (index < pageCount) {
       this.indicators.push({ active: false });

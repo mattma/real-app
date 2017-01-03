@@ -1,34 +1,11 @@
 @import 'assets/styles/variables.scss';
 
-.slide-1 {
-  background-image: url("res://training-bg-1");
-}
-
-.slide-2 {
-  background-image: url("res://home-bg");
-}
-
-.slide-3 {
-  background-image: url("res://training-bg-1");
-}
-
-.slide-4 {
-  background-image: url("res://home-bg");
-}
-
 Label {
   text-align: center;
   width: 100%;
   font-size: 35;
   margin-top: 35;
   color: black;
-}
-
-.training-bg {
-  background-image: url("res://training-bg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 }
 
 .training-group {
