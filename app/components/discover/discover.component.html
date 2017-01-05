@@ -14,7 +14,22 @@
     <label col="2" text="FIND"></label>
     <label col="3" text="L.BOT" class="last"></label>
   </GridLayout>
-  <StackLayout row="1">
-    <Label text="card"></Label>
-  </StackLayout>
+  <GridLayout row="1" columns="*, *">
+    <StackLayout col="0" class="person">
+      <StackLayout class="person-card">
+        <Button text="Guy No.1" class="img"></Button>
+
+        <Label text="Do you like spinning class?" class="say-hello"></Label>
+        <Label text="29, Sotware Engineer" class="basic-info"></Label>
+      </StackLayout>
+    </StackLayout>
+    <StackLayout col="1" class="person">
+      <StackLayout class="person-card">
+        <Button text="Guy No.2" class="img"></Button>
+
+        <Label text="I have two cats :)" class="say-hello"></Label>
+        <Label text="32, IT Consultant" class="basic-info"></Label>
+      </StackLayout>
+    </StackLayout>
+  </GridLayout>
 </GridLayout>
