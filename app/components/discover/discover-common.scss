@@ -1,1 +1,30 @@
 @import 'assets/styles/variables.scss';
+
+.sub-nav-tab {
+  border-bottom-style: solid;
+  border-bottom-width: 1;
+  border-bottom-color: rgba(114, 114, 114, 0.4);
+
+  background-color: rgb(247, 247, 247);
+
+  Label {
+    width: 100%;
+    border-right-style: solid;
+    border-right-width: 1;
+    border-right-color: rgb(231, 231, 231);
+
+    font-size: 18;
+    font-weight: 700;
+    text-align: center;
+    color: rgb(170, 170, 170);
+
+    &.last{
+      border-right-width: 0;
+    }
+
+    &.current {
+      color: $white;
+      background-color: rgb(102, 160, 255);
+    }
+  }
+}

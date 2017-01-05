@@ -1,15 +1,20 @@
 <ActionBar class="action-bar-dark">
-  <ActionItem ios.position="left" (tap)="navToPage()">
-    <Image src="res://icon-user" scaleX="0.6" scaleY="0.6"></Image>
+  <ActionItem ios.position="left">
+    <Button text="&#xf20d;" class="ion" horizontalAlignment="center" verticalAlignment="center"></Button>
   </ActionItem>
-  <StackLayout>
-    <Image src="res://app-logo" scaleX="0.7" scaleY="0.7"></Image>
-  </StackLayout>
   <ActionItem ios.position="right" android.position="popup">
     <Image src="res://icon-love-arrow" scaleX="0.7" scaleY="0.7"></Image>
   </ActionItem>
 </ActionBar>
 
-<GridLayout>
-  <Label text="discover page"></Label>
+<GridLayout rows="60, *">
+  <GridLayout row="0" columns="*, *, *, *" class="sub-nav-tab">
+    <label col="0" text="TODAY" class="current"></label>
+    <label col="1" text="PAST"></label>
+    <label col="2" text="FIND"></label>
+    <label col="3" text="L.BOT" class="last"></label>
+  </GridLayout>
+  <StackLayout row="1">
+    <Label text="card"></Label>
+  </StackLayout>
 </GridLayout>
