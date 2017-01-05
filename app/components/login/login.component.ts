@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
 
   private login (auth: string) {
     console.log('auth: ', auth);
-    // this.routerExtensions.navigate(['/training']);
+    this.routerExtensions.navigate(['/discover']);
     // this.loginService.login(this.user)
     //   .subscribe(
     //     (user: User) => {

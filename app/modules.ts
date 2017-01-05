@@ -6,6 +6,7 @@ import { routes } from './app.routes';
 import { HomeModule } from './components/home/home.module';
 import { LoginModule } from './components/login/login.module';
 import { TrainingModule } from './components/training/training.module';
+import { DiscoverModule } from './components/discover/discover.module';
 
 export const ApplicationModules = [
   NativeScriptModule,
@@ -15,6 +16,7 @@ export const ApplicationModules = [
   HomeModule,
   LoginModule,
   TrainingModule,
+  DiscoverModule,
 ];
 
 export const ApplicationServices = [];
