@@ -64,14 +64,14 @@
           <Label row="0" col="1" text="employer" class="person-detail-title"></Label>
           <Label row="1" col="0" class="dot-highlight"></Label>
           <Label row="1" col="1" text="{{candidate.profile.employer}}" class="person-detail-content"></Label>
-          <Label row="1" col="2" text="(verified)" *ngIf="candidate.profile.verification.indexOf('employer') > -1" class="person-detail-content-verified"></Label>
+          <Label row="1" col="2" text="(verified)" *ngIf="candidate.profileVerification.indexOf('employer') > -1" class="person-detail-content-verified"></Label>
         </GridLayout>
 
         <GridLayout rows="14, 18" columns="20, auto, auto" *ngIf="candidate.profile.education">
           <Label row="0" col="1" text="education" class="person-detail-title"></Label>
           <Label row="1" col="0" class="dot-highlight"></Label>
           <Label row="1" col="1" text="{{candidate.profile.education}}" class="person-detail-content"></Label>
-          <Label row="1" col="2" text="(verified)" *ngIf="candidate.profile.verification.indexOf('education') > -1" class="person-detail-content-verified"></Label>
+          <Label row="1" col="2" text="(verified)" *ngIf="candidate.profileVerification.indexOf('education') > -1" class="person-detail-content-verified"></Label>
         </GridLayout>
 
         <GridLayout rows="14, 18" columns="20, auto, auto" *ngIf="candidate.profile.salary">

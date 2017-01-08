@@ -19,9 +19,10 @@ export class DiscoverService {
         religion: 'Christian',
         employer: 'Apple',
         education: 'UC Berkeley',
-        salary: '100K - 120K',
-        verification: ['employer', 'education']
-      }
+        salary: '100K - 120K'
+      },
+      profileVerification: ['employer', 'education'],
+      profileDisplay: ['height', 'religion', 'employer', 'education', 'salary']
     }, {
       socialServices: [
         { service: 'linkedin' }
@@ -35,9 +36,10 @@ export class DiscoverService {
         religion: 'Christian',
         employer: 'Google',
         education: 'CMU Master',
-        salary: '100K - 150k',
-        verification: ['employer', 'education']
-      }
+        salary: '100K - 150k'
+      },
+      profileVerification: ['employer', 'education'],
+      profileDisplay: ['height', 'religion', 'employer', 'education', 'salary']
     }];
   }
 }

@@ -10,6 +10,7 @@ export interface ICandadate {
     employer?: string;
     education?: string;
     salary?: string;
-    verification?: Array<string>;
-  }
+  };
+  profileVerification: Array<string>;
+  profileDisplay: Array<string>;
 }
