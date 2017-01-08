@@ -8,7 +8,7 @@ import { DiscoverComponent } from './components/discover/discover.component';
 // import NotFound404Routes from './+not-found-404/not-found-404.routes';
 
 export const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/discover' },
+  { path: '', pathMatch: 'full', redirectTo: '/training' },
   { path: 'login', component: LoginComponent },
   { path: 'training', component: TrainingComponent },
   { path: 'discover', component: DiscoverComponent },

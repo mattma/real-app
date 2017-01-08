@@ -36,6 +36,7 @@
     "build:android": "tns build android --bundle",
     "build:ios": "tns build ios --bundle",
     "clean": "rimraf node_modules hooks platforms lib npm-debug.log app/**/*.css app/**/*.js app/**/*.js.map && npm cache clean",
+    "clean:assets": "rimraf npm-debug.log app/**/*.css app/**/*.js app/**/*.js.map",
     "clean:install": "npm set progress=false && npm install",
     "lint": "tslint \"app/**/*.ts\"",
     "preclean:install": "npm run clean",

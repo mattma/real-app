@@ -1,0 +1,56 @@
+@import 'assets/styles/variables.scss';
+
+.login-bg {
+  background-image: url("res://login-bg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.login-group {
+  width: 100%;
+  height: 120;
+}
+
+.login-group-row {
+  width: 100%;
+  height: 60;
+
+  Label {
+    width: 100%;
+    height: 60;
+    padding-top: 12;
+
+    font-size: 14;
+    font-weight: 600;
+    color: $white;
+  }
+
+  .fa {
+    width: 18;
+    height: 18;
+    margin-right: 8;
+    border-radius: 5;
+
+    font-size: 22;
+    background-color: $white;
+  }
+}
+
+.btn-facebook {
+  margin-bottom: 8;
+
+  background-color: rgba(90, 126,201, 0.8);
+
+  .fa {
+    color: rgb(60, 90, 153);
+  }
+}
+
+.btn-linkedin {
+  background-color: rgba(0, 155, 223, 0.8);
+
+  .fa {
+    color: rgb(2, 116, 179);
+  }
+}

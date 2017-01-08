@@ -1,0 +1,114 @@
+@import 'assets/styles/variables.scss';
+
+@mixin slideIndicator ($size: 10, $color: #fff) {
+  width: $size;
+  height: $size;
+  margin-left: $size / 4;
+  margin-right: $size / 4;
+  margin-top: 0;
+  border-radius: $size / 2;
+
+  background-color: $color;
+  opacity: 0.9;
+}
+
+.footer {
+  width: 100%;
+  height: 10%;
+  margin-top: 90%;
+
+  background-color: $white;
+
+  Button {
+    width: 35%;
+    font-size: 22;
+    color: $purple;
+  }
+
+  StackLayout {
+    horizontal-align: center;
+  }
+
+  .arrow-left {
+    margin-left: 5%;
+
+    text-align: left;
+  }
+
+  .arrow-right {
+    margin-right: 5%;
+
+    text-align: right;
+  }
+
+  .skip-training {
+    width: auto;
+    margin-left: 85%;
+
+    color: $text-primary-color;
+    font-weight: 700;
+  }
+}
+
+.slide-indicator-active {
+  @include slideIndicator(10, $purple);
+}
+
+.slide-indicator-inactive {
+  @include slideIndicator(10, $purple);
+  opacity: 0.4;
+}
+
+// @TODO move to original location instead of module section
+.slide-1 {
+  background-image: url("res://training-bg-1");
+}
+
+.slide-2 {
+  background-image: url("res://training-bg-2");
+}
+
+.slide-3 {
+  background-image: url("res://training-bg-3");
+}
+
+.training-content {
+  margin-bottom: 60;
+
+  Label {
+    margin-bottom: 0;
+
+    color: $white;
+    font-weight: 500;
+  }
+
+  .h3 {
+    margin-top: 72%;
+    font-size: 21;
+  }
+
+  .p {
+    width: 85%;
+
+    font-size: 13;
+  }
+}
+
+.slides-container {
+  position: relative;
+}
+
+//.close-btn {
+//  width: 26;
+//  height: 26;
+//  position: absolute;
+//  top: 10;
+//  left: 10;
+//  border-radius: 13;
+//
+//  background-color: rgb(204, 204, 204);
+//
+//  .fa {
+//    color: $white;
+//  }
+//}
