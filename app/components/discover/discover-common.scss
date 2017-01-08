@@ -78,7 +78,7 @@
 }
 
 .person-detail {
-  margin: 4 12 12 12;
+  margin: 4 12 0 12;
 
   GridLayout {
     margin-bottom: 10;
@@ -104,10 +104,14 @@
 }
 
 .person-learn-more {
-  margin: 8 12 12 12;
-  border-radius: 12;
+  height: 50;
+  margin: 4 12 12 12;
+  padding: 4 6;
+  border-radius: 5;
 
-  font-size: 14;
+  font-size: 12;
+  line-height: normal;
+  text-transform: uppercase;
   color: $white;
   background-color: rgb(102, 160, 255);
 }
