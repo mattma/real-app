@@ -1,16 +1,19 @@
 <ActionBar class="action-bar-dark">
-  <ActionItem ios.position="left">
-    <Button text="&#xf20d;" class="ion" horizontalAlignment="center" verticalAlignment="center"></Button>
-  </ActionItem>
-  <ActionItem ios.position="right" android.position="popup">
-    <Image src="res://icon_rose" scaleX="0.7" scaleY="0.7"></Image>
-  </ActionItem>
-  <ActionItem ios.position="right" android.position="popup">
-    <Label text="1,800"></Label>
-  </ActionItem>
-  <ActionItem ios.position="right" android.position="popup">
-    <Image src="res://icon_chat" scaleX="0.7" scaleY="0.7"></Image>
-  </ActionItem>
+  <StackLayout orientation="horizontal">
+    <StackLayout orientation="horizontal" horizontalAlignment="left" class="action-item-left">
+      <Button text="&#xf20d;" class="ion" verticalAlignment="center"></Button>
+      <Label text="09:00:10" class="time-elapsed"></Label>
+      <Label text="Left"></Label>
+    </StackLayout>
+
+    <GridLayout columns="*, 50" class="action-item-right">
+      <StackLayout col="0" orientation="horizontal" horizontalAlignment="right" class="credits">
+        <Image src="res://icon_rose"></Image>
+        <Label text="1,800" class="credit"></Label>
+      </StackLayout>
+      <Image col="1" src="res://icon_chat" class="icon-chat" horizontalAlignment="left"></Image>
+    </GridLayout>
+  </StackLayout>
 </ActionBar>
 
 <GridLayout rows="60, *">
