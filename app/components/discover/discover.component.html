@@ -33,15 +33,12 @@
 
         <GridLayout columns="*, 28, 32" class="social-icons" *ngIf="candidate.socialServices && candidate.socialServices.length > 0">
           <Image
-          col="1"
-          [src]="'res://icon_facebook'"
-          stretch="aspectFill"
-          horizontalAlignment="left"></Image>
-          <Image
-          col="2"
-          [src]="'res://icon_linkedin'"
-          stretch="aspectFill"
-          horizontalAlignment="left"></Image>
+            *ngFor="let social of candidate.socialServices; let si = index;"
+            [col]="1 + (candidate.socialServices.length === 1 ? candidate.socialServices.length : si)"
+            [src]="'res://icon_' + social.service"
+            stretch="aspectFill"
+            horizontalAlignment="left">
+          </Image>
         </GridLayout>
 
         <StackLayout class="person-card-content">

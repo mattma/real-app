@@ -22,8 +22,7 @@ export class DiscoverService {
         salary: '100K - 120K',
         verification: ['employer', 'education']
       }
-    },
-    {
+    }, {
       socialServices: [
         { service: 'linkedin' }
       ],
@@ -39,7 +38,6 @@ export class DiscoverService {
         salary: '100K - 150k',
         verification: ['employer', 'education']
       }
-    }
-    ];
+    }];
   }
 }
