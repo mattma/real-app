@@ -91,12 +91,12 @@
     height: 22;
     top: 10;
     left: 0;
-  }
 
-  .social-icon {
-    width: 22;
-    height: 22;
-    border-radius: 4;
+    Image {
+      width: 22;
+      height: 22;
+      border-radius: 4;
+    }
   }
 
   .person-card-content {
@@ -150,6 +150,8 @@
   }
 
   .person-detail-content-verified {
+    padding-left: 4;
+
     font-size: 10;
     color: rgb(204, 204, 204);
   }

@@ -16,14 +16,14 @@
   </StackLayout>
 </ActionBar>
 
-<GridLayout rows="60, 20 *">
+<GridLayout rows="60, 20, *">
   <GridLayout row="0" columns="*, *, *, *" class="sub-nav-tab">
     <label col="0" text="Today" class="current"></label>
     <label col="1" text="Past"></label>
     <label col="2" text="Find"></label>
     <label col="3" text="L.bot" class="last"></label>
   </GridLayout>
-  <StackLayout row=1>
+  <StackLayout row="1">
     <Label text="Choose only one"></Label>
   </StackLayout>
   <GridLayout row="2" columns="*, *">
@@ -32,9 +32,8 @@
         <Image src="res://user-2" stretch="aspectFill" class="profile-image"></Image>
 
         <GridLayout columns="*, 28, 32" class="social-icons">
-          <Label col="0" text=""></Label>
-          <Image col="1" src="res://icon_fackbook" class="social-icon icon-facebook" stretch="aspectFill" horizontalAlignment="left"></Image>
-          <Image col="2" src="res://icon_linkedin" class="social-icon icon-linkedin" stretch="aspectFill" horizontalAlignment="left"></Image>
+          <Image col="1" src="res://icon_fackbook" stretch="aspectFill" horizontalAlignment="left"></Image>
+          <Image col="2" src="res://icon_linkedin" stretch="aspectFill" horizontalAlignment="left"></Image>
         </GridLayout>
 
         <StackLayout class="person-card-content">
@@ -44,38 +43,33 @@
       </AbsoluteLayout>
 
       <StackLayout class="person-detail">
-        <GridLayout rows="14, 18" columns="20, *, *">
-          <Label row="0" col="0"></Label>
+        <GridLayout rows="14, 18" columns="20, auto, auto">
           <Label row="0" col="1" text="Height" class="person-detail-title"></Label>
           <Label row="1" col="0" class="dot-highlight"></Label>
           <Label row="1" col="1" colSpan="2" text="6.2 - Cute enough" class="person-detail-content"></Label>
         </GridLayout>
 
-        <GridLayout rows="14, 18" columns="20, *, *">
-          <Label row="0" col="0"></Label>
+        <GridLayout rows="14, 18" columns="20, auto, auto">
           <Label row="0" col="1" text="Religion" class="person-detail-title"></Label>
           <Label row="1" col="0" class="dot-highlight"></Label>
           <Label row="1" col="1" colSpan="2" text="Christian" class="person-detail-content"></Label>
         </GridLayout>
 
-        <GridLayout rows="14, 18" columns="20, *, 45">
-          <Label row="0" col="0"></Label>
+        <GridLayout rows="14, 18" columns="20, auto, auto">
           <Label row="0" col="1" text="Employer" class="person-detail-title"></Label>
           <Label row="1" col="0" class="dot-highlight"></Label>
           <Label row="1" col="1" text="Apple" class="person-detail-content"></Label>
           <Label row="1" col="2" text="(verified)" class="person-detail-content-verified"></Label>
         </GridLayout>
 
-        <GridLayout rows="14, 18" columns="20, *, 45">
-          <Label row="0" col="0"></Label>
+        <GridLayout rows="14, 18" columns="20, auto, auto">
           <Label row="0" col="1" text="Education" class="person-detail-title"></Label>
           <Label row="1" col="0" class="dot-highlight"></Label>
           <Label row="1" col="1" text="UC Berkeley" class="person-detail-content"></Label>
           <Label row="1" col="2" text="(verified)" class="person-detail-content-verified"></Label>
         </GridLayout>
 
-        <GridLayout rows="14, 18" columns="20, *, *">
-          <Label row="0" col="0"></Label>
+        <GridLayout rows="14, 18" columns="20, auto, auto">
           <Label row="0" col="1" text="Salary" class="person-detail-title"></Label>
           <Label row="1" col="0" class="dot-highlight"></Label>
           <Label row="1" col="1" colSpan="2" text="100k - 120k" class="person-detail-content"></Label>
