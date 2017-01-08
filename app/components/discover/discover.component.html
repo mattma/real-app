@@ -16,14 +16,17 @@
   </StackLayout>
 </ActionBar>
 
-<GridLayout rows="60, *">
+<GridLayout rows="60, 20 *">
   <GridLayout row="0" columns="*, *, *, *" class="sub-nav-tab">
     <label col="0" text="Today" class="current"></label>
     <label col="1" text="Past"></label>
     <label col="2" text="Find"></label>
     <label col="3" text="L.bot" class="last"></label>
   </GridLayout>
-  <GridLayout row="1" columns="*, *">
+  <StackLayout row=1>
+    <Label text="Choose only one"></Label>
+  </StackLayout>
+  <GridLayout row="2" columns="*, *">
     <StackLayout col="0" class="person">
       <AbsoluteLayout class="person-card">
         <Image src="res://user-2" stretch="aspectFill" class="profile-image"></Image>
