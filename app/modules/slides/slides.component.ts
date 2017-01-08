@@ -40,8 +40,12 @@ enum cancellationReason {
   selector: 'slides',
   encapsulation: ViewEncapsulation.None,
   template: `
-    <AbsoluteLayout>
+    <AbsoluteLayout class="slides-container">
       <ng-content></ng-content>
+      
+      <!--<AbsoluteLayout class="close-btn">-->
+        <!--<Button class="fa center" text="&#xf00d;" (tap)="skipTraining()"></Button>-->
+      <!--</AbsoluteLayout> -->
       
       <GridLayout *ngIf="pageIndicators" orientation="horizontal" class="footer">
         <Button *ngIf="hasPrevious" class="ion arrow-left" text="&#xf124;" horizontalAlignment="left" (tap)="onSlidingDir('previous')"></Button>
