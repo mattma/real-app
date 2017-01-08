@@ -23,9 +23,11 @@
     <label col="2" text="Find"></label>
     <label col="3" text="L.bot" class="last"></label>
   </GridLayout>
+
   <StackLayout row="1">
     <Label text="Choose only one"></Label>
   </StackLayout>
+
   <GridLayout row="2" columns="*, *">
     <StackLayout [col]="i" class="person" *ngFor="let candidate of candidates; let i = index;">
       <AbsoluteLayout class="person-card">
@@ -48,36 +50,14 @@
       </AbsoluteLayout>
 
       <StackLayout class="person-detail">
-        <GridLayout rows="14, 18" columns="20, auto, auto" *ngIf="candidate.profile.height">
-          <Label row="0" col="1" text="height" class="person-detail-title"></Label>
+        <GridLayout
+          rows="14, 18"
+          columns="20, auto, auto"
+          *ngFor="let profile of candidate.profileDisplay; let pi = index;">
+          <Label row="0" col="1" text="{{profile}}" class="person-detail-title"></Label>
           <Label row="1" col="0" class="dot-highlight"></Label>
-          <Label row="1" col="1" colSpan="2" text="{{candidate.profile.height}}" class="person-detail-content"></Label>
-        </GridLayout>
-
-        <GridLayout rows="14, 18" columns="20, auto, auto" *ngIf="candidate.profile.religion">
-          <Label row="0" col="1" text="religion" class="person-detail-title"></Label>
-          <Label row="1" col="0" class="dot-highlight"></Label>
-          <Label row="1" col="1" colSpan="2" text="{{candidate.profile.religion}}" class="person-detail-content"></Label>
-        </GridLayout>
-
-        <GridLayout rows="14, 18" columns="20, auto, auto" *ngIf="candidate.profile.employer">
-          <Label row="0" col="1" text="employer" class="person-detail-title"></Label>
-          <Label row="1" col="0" class="dot-highlight"></Label>
-          <Label row="1" col="1" text="{{candidate.profile.employer}}" class="person-detail-content"></Label>
-          <Label row="1" col="2" text="(verified)" *ngIf="candidate.profileVerification.indexOf('employer') > -1" class="person-detail-content-verified"></Label>
-        </GridLayout>
-
-        <GridLayout rows="14, 18" columns="20, auto, auto" *ngIf="candidate.profile.education">
-          <Label row="0" col="1" text="education" class="person-detail-title"></Label>
-          <Label row="1" col="0" class="dot-highlight"></Label>
-          <Label row="1" col="1" text="{{candidate.profile.education}}" class="person-detail-content"></Label>
-          <Label row="1" col="2" text="(verified)" *ngIf="candidate.profileVerification.indexOf('education') > -1" class="person-detail-content-verified"></Label>
-        </GridLayout>
-
-        <GridLayout rows="14, 18" columns="20, auto, auto" *ngIf="candidate.profile.salary">
-          <Label row="0" col="1" text="salary" class="person-detail-title"></Label>
-          <Label row="1" col="0" class="dot-highlight"></Label>
-          <Label row="1" col="1" colSpan="2" text="{{candidate.profile.salary}}" class="person-detail-content"></Label>
+          <Label row="1" col="1" [colSpan]="candidate.profileVerification.indexOf(profile) > -1 ? 1 : 2" text="{{candidate.profile[profile]}}" class="person-detail-content"></Label>
+          <Label row="1" col="2" text="(verified)" *ngIf="candidate.profileVerification.indexOf(profile) > -1" class="person-detail-content-verified"></Label>
         </GridLayout>
       </StackLayout>
 
