@@ -23,23 +23,23 @@ export class DiscoverService {
         verification: ['employer', 'education']
       }
     },
-    // {
-    //   socialServices: [
-    //     { service: 'linkedin' }
-    //   ],
-    //   greeting: 'I have two cats :)',
-    //   profile: {
-    //     imagePath: 'res://user-2',
-    //     age: '32',
-    //     job: 'IT Consultant',
-    //     height: '6.1 - Muscular',
-    //     religion: 'Christian',
-    //     employer: 'Google',
-    //     education: 'CMU Master',
-    //     salary: '100K - 150k',
-    //     verification: ['employer', 'education']
-    //   }
-    // }
+    {
+      socialServices: [
+        { service: 'linkedin' }
+      ],
+      greeting: 'I have two cats :)',
+      profile: {
+        imagePath: 'res://user-1',
+        age: '32',
+        job: 'IT Consultant',
+        height: '6.1 - Muscular',
+        religion: 'Christian',
+        employer: 'Google',
+        education: 'CMU Master',
+        salary: '100K - 150k',
+        verification: ['employer', 'education']
+      }
+    }
     ];
   }
 }

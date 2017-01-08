@@ -27,22 +27,26 @@
     <Label text="Choose only one"></Label>
   </StackLayout>
   <GridLayout row="2" columns="*, *">
-    <StackLayout col="0" class="person" *ngFor="let candidate of candidates">
+    <StackLayout [col]="i" class="person" *ngFor="let candidate of candidates; let i = index;">
       <AbsoluteLayout class="person-card">
         <Image src="{{candidate.profile.imagePath}}" stretch="aspectFill" class="profile-image"></Image>
 
         <GridLayout columns="*, 28, 32" class="social-icons" *ngIf="candidate.socialServices && candidate.socialServices.length > 0">
           <Image
-            *ngFor="let social of candidate.socialServices"
-            [col]="candidate.socialServices.length - index"
-            [src]="'res://icon_' + social.service"
-            stretch="aspectFill"
-            horizontalAlignment="left"></Image>
+          col="1"
+          [src]="'res://icon_facebook'"
+          stretch="aspectFill"
+          horizontalAlignment="left"></Image>
+          <Image
+          col="2"
+          [src]="'res://icon_linkedin'"
+          stretch="aspectFill"
+          horizontalAlignment="left"></Image>
         </GridLayout>
 
         <StackLayout class="person-card-content">
-          <Label text="{{candidate.greeting}}" class="say-hello"></Label>
-          <Label text="{{candidate.profile.age}}, {{candidate.profile.job}}" class="basic-info"></Label>
+        <Label text="{{candidate.greeting}}" class="say-hello"></Label>
+        <Label text="{{candidate.profile.age}}, {{candidate.profile.job}}" class="basic-info"></Label>
         </StackLayout>
       </AbsoluteLayout>
 
@@ -77,62 +81,6 @@
           <Label row="0" col="1" text="Salary" class="person-detail-title"></Label>
           <Label row="1" col="0" class="dot-highlight"></Label>
           <Label row="1" col="1" colSpan="2" text="{{candidate.profile.salary}}" class="person-detail-content"></Label>
-        </GridLayout>
-      </StackLayout>
-
-      <Button text="I want to know more about him" class="person-learn-more center" textWrap="true"></Button>
-    </StackLayout>
-    <StackLayout col="1" class="person">
-      <AbsoluteLayout class="person-card">
-        <Image src="res://user-1" stretch="aspectFill" class="profile-image"></Image>
-
-        <GridLayout columns="*, 28, 32" class="social-icons">
-          <Label col="0" colspan="2" text=""></Label>
-          <Image col="2" src="res://icon_linkedin" class="social-icon icon-linkedin" stretch="aspectFill" horizontalAlignment="left"></Image>
-        </GridLayout>
-
-        <StackLayout class="person-card-content">
-          <Label text="I have two cats :)" class="say-hello"></Label>
-          <Label text="32, IT Consultant" class="basic-info"></Label>
-        </StackLayout>
-      </AbsoluteLayout>
-
-      <StackLayout class="person-detail">
-        <GridLayout rows="14, 18" columns="20, *, *">
-          <Label row="0" col="0"></Label>
-          <Label row="0" col="1" text="Height" class="person-detail-title"></Label>
-          <Label row="1" col="0" class="dot-highlight"></Label>
-          <Label row="1" col="1" colSpan="2" text="6.1 - Muscular" class="person-detail-content"></Label>
-        </GridLayout>
-
-        <GridLayout rows="14, 18" columns="20, *, *">
-          <Label row="0" col="0"></Label>
-          <Label row="0" col="1" text="Religion" class="person-detail-title"></Label>
-          <Label row="1" col="0" class="dot-highlight"></Label>
-          <Label row="1" col="1" colSpan="2" text="Christian" class="person-detail-content"></Label>
-        </GridLayout>
-
-        <GridLayout rows="14, 18" columns="20, *, 45">
-          <Label row="0" col="0"></Label>
-          <Label row="0" col="1" text="Employer" class="person-detail-title"></Label>
-          <Label row="1" col="0" class="dot-highlight"></Label>
-          <Label row="1" col="1" text="Google" class="person-detail-content"></Label>
-          <Label row="1" col="2" text="(verified)" class="person-detail-content-verified"></Label>
-        </GridLayout>
-
-        <GridLayout rows="14, 18" columns="20, *, 45">
-          <Label row="0" col="0"></Label>
-          <Label row="0" col="1" text="Education" class="person-detail-title"></Label>
-          <Label row="1" col="0" class="dot-highlight"></Label>
-          <Label row="1" col="1" text="CMU Master" class="person-detail-content"></Label>
-          <Label row="1" col="2" text="(verified)" class="person-detail-content-verified"></Label>
-        </GridLayout>
-
-        <GridLayout rows="14, 18" columns="20, *, *">
-          <Label row="0" col="0"></Label>
-          <Label row="0" col="1" text="Salary" class="person-detail-title"></Label>
-          <Label row="1" col="0" class="dot-highlight"></Label>
-          <Label row="1" col="1" colSpan="2" text="100k - 150k" class="person-detail-content"></Label>
         </GridLayout>
       </StackLayout>
 
