@@ -42,40 +42,40 @@
         </GridLayout>
 
         <StackLayout class="person-card-content">
-        <Label text="{{candidate.greeting}}" class="say-hello"></Label>
-        <Label text="{{candidate.profile.age}}, {{candidate.profile.job}}" class="basic-info"></Label>
+          <Label text="{{candidate.greeting}}" class="say-hello"></Label>
+          <Label text="{{candidate.profile.age}}, {{candidate.profile.job}}" class="basic-info"></Label>
         </StackLayout>
       </AbsoluteLayout>
 
       <StackLayout class="person-detail">
         <GridLayout rows="14, 18" columns="20, auto, auto" *ngIf="candidate.profile.height">
-          <Label row="0" col="1" text="Height" class="person-detail-title"></Label>
+          <Label row="0" col="1" text="height" class="person-detail-title"></Label>
           <Label row="1" col="0" class="dot-highlight"></Label>
           <Label row="1" col="1" colSpan="2" text="{{candidate.profile.height}}" class="person-detail-content"></Label>
         </GridLayout>
 
         <GridLayout rows="14, 18" columns="20, auto, auto" *ngIf="candidate.profile.religion">
-          <Label row="0" col="1" text="Religion" class="person-detail-title"></Label>
+          <Label row="0" col="1" text="religion" class="person-detail-title"></Label>
           <Label row="1" col="0" class="dot-highlight"></Label>
           <Label row="1" col="1" colSpan="2" text="{{candidate.profile.religion}}" class="person-detail-content"></Label>
         </GridLayout>
 
         <GridLayout rows="14, 18" columns="20, auto, auto" *ngIf="candidate.profile.employer">
-          <Label row="0" col="1" text="Employer" class="person-detail-title"></Label>
+          <Label row="0" col="1" text="employer" class="person-detail-title"></Label>
           <Label row="1" col="0" class="dot-highlight"></Label>
           <Label row="1" col="1" text="{{candidate.profile.employer}}" class="person-detail-content"></Label>
-          <Label row="1" col="2" text="(verified)" class="person-detail-content-verified"></Label>
+          <Label row="1" col="2" text="(verified)" *ngIf="candidate.profile.verification.indexOf('employer') > -1" class="person-detail-content-verified"></Label>
         </GridLayout>
 
         <GridLayout rows="14, 18" columns="20, auto, auto" *ngIf="candidate.profile.education">
-          <Label row="0" col="1" text="Education" class="person-detail-title"></Label>
+          <Label row="0" col="1" text="education" class="person-detail-title"></Label>
           <Label row="1" col="0" class="dot-highlight"></Label>
           <Label row="1" col="1" text="{{candidate.profile.education}}" class="person-detail-content"></Label>
-          <Label row="1" col="2" text="(verified)" class="person-detail-content-verified"></Label>
+          <Label row="1" col="2" text="(verified)" *ngIf="candidate.profile.verification.indexOf('education') > -1" class="person-detail-content-verified"></Label>
         </GridLayout>
 
         <GridLayout rows="14, 18" columns="20, auto, auto" *ngIf="candidate.profile.salary">
-          <Label row="0" col="1" text="Salary" class="person-detail-title"></Label>
+          <Label row="0" col="1" text="salary" class="person-detail-title"></Label>
           <Label row="1" col="0" class="dot-highlight"></Label>
           <Label row="1" col="1" colSpan="2" text="{{candidate.profile.salary}}" class="person-detail-content"></Label>
         </GridLayout>
