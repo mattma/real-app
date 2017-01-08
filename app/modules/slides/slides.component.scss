@@ -65,19 +65,15 @@
 }
 
 .slide-2 {
-  background-image: url("res://home-bg");
+  background-image: url("res://training-bg-2");
 }
 
 .slide-3 {
-  background-image: url("res://training-bg-1");
-}
-
-.slide-4 {
-  background-image: url("res://home-bg");
+  background-image: url("res://training-bg-3");
 }
 
 .training-content {
-  margin-bottom: 40;
+  margin-bottom: 60;
 
   Label {
     margin-bottom: 0;
@@ -87,11 +83,13 @@
   }
 
   .h3 {
-    margin-top: 75%;
-    font-size: 22;
+    margin-top: 72%;
+    font-size: 21;
   }
 
   .p {
     width: 85%;
+
+    font-size: 13;
   }
 }
