@@ -3,7 +3,13 @@
     <Button text="&#xf20d;" class="ion" horizontalAlignment="center" verticalAlignment="center"></Button>
   </ActionItem>
   <ActionItem ios.position="right" android.position="popup">
-    <Image src="res://icon-love-arrow" scaleX="0.7" scaleY="0.7"></Image>
+    <Image src="res://icon_rose" scaleX="0.7" scaleY="0.7"></Image>
+  </ActionItem>
+  <ActionItem ios.position="right" android.position="popup">
+    <Label text="1,800"></Label>
+  </ActionItem>
+  <ActionItem ios.position="right" android.position="popup">
+    <Image src="res://icon_chat" scaleX="0.7" scaleY="0.7"></Image>
   </ActionItem>
 </ActionBar>
 
@@ -17,7 +23,13 @@
   <GridLayout row="1" columns="*, *">
     <StackLayout col="0" class="person">
       <AbsoluteLayout class="person-card">
-        <Image src="res://user-2" stretch="aspectFill"></Image>
+        <Image src="res://user-2" stretch="aspectFill" class="profile-image"></Image>
+
+        <GridLayout columns="*, 28, 32" class="social-icons">
+          <Label col="0" text=""></Label>
+          <Image col="1" src="res://icon_fackbook" class="social-icon icon-facebook" stretch="aspectFill" horizontalAlignment="left"></Image>
+          <Image col="2" src="res://icon_linkedin" class="social-icon icon-linkedin" stretch="aspectFill" horizontalAlignment="left"></Image>
+        </GridLayout>
 
         <StackLayout class="person-card-content">
           <Label text="Do you like spinning class?" class="say-hello"></Label>
@@ -68,7 +80,12 @@
     </StackLayout>
     <StackLayout col="1" class="person">
       <AbsoluteLayout class="person-card">
-        <Image src="res://user-1" stretch="aspectFill"></Image>
+        <Image src="res://user-1" stretch="aspectFill" class="profile-image"></Image>
+
+        <GridLayout columns="*, 28, 32" class="social-icons">
+          <Label col="0" colspan="2" text=""></Label>
+          <Image col="2" src="res://icon_linkedin" class="social-icon icon-linkedin" stretch="aspectFill" horizontalAlignment="left"></Image>
+        </GridLayout>
 
         <StackLayout class="person-card-content">
           <Label text="I have two cats :)" class="say-hello"></Label>
