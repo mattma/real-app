@@ -27,52 +27,56 @@
     <Label text="Choose only one"></Label>
   </StackLayout>
   <GridLayout row="2" columns="*, *">
-    <StackLayout col="0" class="person">
+    <StackLayout col="0" class="person" *ngFor="let candidate of candidates">
       <AbsoluteLayout class="person-card">
-        <Image src="res://user-2" stretch="aspectFill" class="profile-image"></Image>
+        <Image src="{{candidate.profile.imagePath}}" stretch="aspectFill" class="profile-image"></Image>
 
-        <GridLayout columns="*, 28, 32" class="social-icons">
-          <Image col="1" src="res://icon_fackbook" stretch="aspectFill" horizontalAlignment="left"></Image>
-          <Image col="2" src="res://icon_linkedin" stretch="aspectFill" horizontalAlignment="left"></Image>
+        <GridLayout columns="*, 28, 32" class="social-icons" *ngIf="candidate.socialServices && candidate.socialServices.length > 0">
+          <Image
+            *ngFor="let social of candidate.socialServices"
+            [col]="candidate.socialServices.length - index"
+            [src]="'res://icon_' + social.service"
+            stretch="aspectFill"
+            horizontalAlignment="left"></Image>
         </GridLayout>
 
         <StackLayout class="person-card-content">
-          <Label text="Do you like spinning class?" class="say-hello"></Label>
-          <Label text="29, Software Engineer" class="basic-info"></Label>
+          <Label text="{{candidate.greeting}}" class="say-hello"></Label>
+          <Label text="{{candidate.profile.age}}, {{candidate.profile.job}}" class="basic-info"></Label>
         </StackLayout>
       </AbsoluteLayout>
 
       <StackLayout class="person-detail">
-        <GridLayout rows="14, 18" columns="20, auto, auto">
+        <GridLayout rows="14, 18" columns="20, auto, auto" *ngIf="candidate.profile.height">
           <Label row="0" col="1" text="Height" class="person-detail-title"></Label>
           <Label row="1" col="0" class="dot-highlight"></Label>
-          <Label row="1" col="1" colSpan="2" text="6.2 - Cute enough" class="person-detail-content"></Label>
+          <Label row="1" col="1" colSpan="2" text="{{candidate.profile.height}}" class="person-detail-content"></Label>
         </GridLayout>
 
-        <GridLayout rows="14, 18" columns="20, auto, auto">
+        <GridLayout rows="14, 18" columns="20, auto, auto" *ngIf="candidate.profile.religion">
           <Label row="0" col="1" text="Religion" class="person-detail-title"></Label>
           <Label row="1" col="0" class="dot-highlight"></Label>
-          <Label row="1" col="1" colSpan="2" text="Christian" class="person-detail-content"></Label>
+          <Label row="1" col="1" colSpan="2" text="{{candidate.profile.religion}}" class="person-detail-content"></Label>
         </GridLayout>
 
-        <GridLayout rows="14, 18" columns="20, auto, auto">
+        <GridLayout rows="14, 18" columns="20, auto, auto" *ngIf="candidate.profile.employer">
           <Label row="0" col="1" text="Employer" class="person-detail-title"></Label>
           <Label row="1" col="0" class="dot-highlight"></Label>
-          <Label row="1" col="1" text="Apple" class="person-detail-content"></Label>
+          <Label row="1" col="1" text="{{candidate.profile.employer}}" class="person-detail-content"></Label>
           <Label row="1" col="2" text="(verified)" class="person-detail-content-verified"></Label>
         </GridLayout>
 
-        <GridLayout rows="14, 18" columns="20, auto, auto">
+        <GridLayout rows="14, 18" columns="20, auto, auto" *ngIf="candidate.profile.education">
           <Label row="0" col="1" text="Education" class="person-detail-title"></Label>
           <Label row="1" col="0" class="dot-highlight"></Label>
-          <Label row="1" col="1" text="UC Berkeley" class="person-detail-content"></Label>
+          <Label row="1" col="1" text="{{candidate.profile.education}}" class="person-detail-content"></Label>
           <Label row="1" col="2" text="(verified)" class="person-detail-content-verified"></Label>
         </GridLayout>
 
-        <GridLayout rows="14, 18" columns="20, auto, auto">
+        <GridLayout rows="14, 18" columns="20, auto, auto" *ngIf="candidate.profile.salary">
           <Label row="0" col="1" text="Salary" class="person-detail-title"></Label>
           <Label row="1" col="0" class="dot-highlight"></Label>
-          <Label row="1" col="1" colSpan="2" text="100k - 120k" class="person-detail-content"></Label>
+          <Label row="1" col="1" colSpan="2" text="{{candidate.profile.salary}}" class="person-detail-content"></Label>
         </GridLayout>
       </StackLayout>
 
