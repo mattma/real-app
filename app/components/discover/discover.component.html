@@ -16,12 +16,14 @@
   </GridLayout>
   <GridLayout row="1" columns="*, *">
     <StackLayout col="0" class="person">
-      <StackLayout class="person-card">
-        <Button text="Guy No.1" class="img"></Button>
+      <AbsoluteLayout class="person-card">
+        <Image src="res://user-2" stretch="aspectFill"></Image>
 
-        <Label text="Do you like spinning class?" class="say-hello"></Label>
-        <Label text="29, Sotware Engineer" class="basic-info"></Label>
-      </StackLayout>
+        <StackLayout class="person-card-content">
+          <Label text="Do you like spinning class?" class="say-hello"></Label>
+          <Label text="29, Software Engineer" class="basic-info"></Label>
+        </StackLayout>
+      </AbsoluteLayout>
 
       <StackLayout class="person-detail">
         <GridLayout rows="14, 18" columns="20, *">
@@ -63,12 +65,15 @@
       <Button text="I want to know more about him" class="person-learn-more"></Button>
     </StackLayout>
     <StackLayout col="1" class="person">
-      <StackLayout class="person-card">
-        <Button text="Guy No.2" class="img"></Button>
+      <AbsoluteLayout class="person-card">
+        <Image src="res://user-1" stretch="aspectFill"></Image>
 
-        <Label text="I have two cats :)" class="say-hello"></Label>
-        <Label text="32, IT Consultant" class="basic-info"></Label>
-      </StackLayout>
+        <StackLayout class="person-card-content">
+          <Label text="I have two cats :)" class="say-hello"></Label>
+          <Label text="32, IT Consultant" class="basic-info"></Label>
+        </StackLayout>
+      </AbsoluteLayout>
+
 
       <StackLayout class="person-detail">
         <GridLayout rows="14, 18" columns="20, *">
