@@ -1,5 +1,7 @@
 @import 'assets/styles/variables.scss';
 
+$card-margin-spacing: 8;
+
 .action-bar-dark {
   Label {
     font-size: 16;
@@ -78,7 +80,7 @@
 
 .person-card {
   position: relative;
-  margin: 12;
+  margin: $card-margin-spacing;
   border-radius: 4;
 
   .profile-image {
@@ -131,7 +133,7 @@
 }
 
 .person-detail {
-  margin: 4 12 0 12;
+  margin: 4 $card-margin-spacing 0 $card-margin-spacing;
 
   GridLayout {
     margin-bottom: 10;
@@ -165,7 +167,7 @@
 
 .person-learn-more {
   height: 50;
-  margin: 4 12 12 12;
+  margin: 4 $card-margin-spacing 12 $card-margin-spacing;
   padding: 4 6;
   border-radius: 5;
 
