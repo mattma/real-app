@@ -11,8 +11,7 @@ import { User } from './shared/user';
 @Component({
   selector: 'real-login',
   templateUrl: 'components/login/login.component.html',
-  // By default, it loads up `app.css` without specify
-  styleUrls: ['components/login/login-common.css']
+  styleUrls: ['components/login/login.css']
 })
 export class LoginComponent implements OnInit {
   @ViewChild('container') container: ElementRef;

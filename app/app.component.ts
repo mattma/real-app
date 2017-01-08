@@ -8,7 +8,9 @@ declare var android;
 @Component({
   selector: 'real-app',
   template: `
-    <page-router-outlet></page-router-outlet>
+    <StackLayout>
+      <page-router-outlet></page-router-outlet>
+    </StackLayout>
   `
 })
 export class AppComponent implements OnInit {

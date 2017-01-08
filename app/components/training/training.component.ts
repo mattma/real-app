@@ -8,8 +8,7 @@ import { View } from 'ui/core/view';
 @Component({
   selector: 'real-training',
   templateUrl: 'components/training/training.component.html',
-  // By default, it loads up `app.css` without specify
-  styleUrls: ['components/training/training-common.css']
+  styleUrls: ['components/training/training.css']
 })
 export class TrainingComponent implements OnInit {
   constructor (private page: Page, private routerExtensions: RouterExtensions) {

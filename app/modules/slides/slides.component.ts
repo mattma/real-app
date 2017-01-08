@@ -60,7 +60,7 @@ enum cancellationReason {
       </GridLayout>
     </AbsoluteLayout>
 	`,
-  styleUrls: ['modules/slides/slides.component.css'],
+  styleUrls: ['modules/slides/slides.css'],
 })
 
 export class SlidesComponent implements OnInit, AfterViewInit {
