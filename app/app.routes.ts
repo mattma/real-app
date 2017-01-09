@@ -8,10 +8,15 @@ import { DiscoverComponent } from './components/discover/discover.component';
 // import NotFound404Routes from './+not-found-404/not-found-404.routes';
 
 export const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/discover' },
-  { path: 'login', component: LoginComponent },
+  { path: '', pathMatch: 'full', redirectTo: '/real' },
   { path: 'training', component: TrainingComponent },
-  { path: 'discover', component: DiscoverComponent },
+  {
+    path: 'real',
+    children: [
+      { path: '', component: LoginComponent },
+      { path: 'discover', component: DiscoverComponent },
+    ]
+  },
   // catch all route must be the last one defined
   // ...NotFound404Routes
 ];
