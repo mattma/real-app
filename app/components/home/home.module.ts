@@ -11,7 +11,7 @@ import { routes } from './home.routes';
     NativeScriptModule,
     NativeScriptHttpModule,
     NativeScriptRouterModule,
-    routes
+    // routes
   ],
   declarations: [HomeComponent],
   exports: [HomeComponent]

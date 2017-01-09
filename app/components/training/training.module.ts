@@ -16,7 +16,7 @@ import { routes } from './training.routes';
     NativeScriptHttpModule,
     NativeScriptRouterModule,
     SlidesModule,
-    routes
+    // routes
   ],
   declarations: [TrainingComponent],
   providers: [],

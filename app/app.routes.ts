@@ -1,20 +1,21 @@
 import { Routes } from '@angular/router';
 
-import { TrainingComponent } from './components/training/training.component';
-import { LoginComponent } from './components/login/login.component';
-import { DiscoverComponent } from './components/discover/discover.component';
+import { trainingRoute } from './components/training/training.routes';
+import { loginRoute } from './components/login/login.routes';
+
+import { discoverRoute } from './components/discover/discover.routes';
 
 // Routes Definition
 // import NotFound404Routes from './+not-found-404/not-found-404.routes';
 
 export const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/real' },
-  { path: 'training', component: TrainingComponent },
+  { path: '', pathMatch: 'full', redirectTo: '/training' },
+    ...trainingRoute,
   {
     path: 'real',
     children: [
-      { path: '', component: LoginComponent },
-      { path: 'discover', component: DiscoverComponent },
+      ...loginRoute,
+      ...discoverRoute,
     ]
   },
   // catch all route must be the last one defined

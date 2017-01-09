@@ -27,7 +27,7 @@ export class TrainingComponent implements OnInit {
   
   // Events
   onSkipTraining () {
-    this.routerExtensions.navigate(['/login'], {
+    this.routerExtensions.navigate(['/real/login'], {
       transition: {
         name: 'slideLeft',
         duration: 300,

@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
 
   private login (auth: string) {
     console.log('auth: ', auth);
-    this.routerExtensions.navigate(['/real/discover']);
+    this.routerExtensions.navigate(['/real/discover'], { clearHistory: true });
     // this.loginService.login(this.user)
     //   .subscribe(
     //     (user: User) => {

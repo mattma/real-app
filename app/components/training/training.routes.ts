@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { TrainingComponent } from './training.component';
 
-const loginRoutes: Routes = [
+export const trainingRoute: Routes = [
   { path: 'training', component: TrainingComponent },
 ];
 
-export const routes: ModuleWithProviders = RouterModule.forChild(loginRoutes);
+export const routes: ModuleWithProviders = RouterModule.forChild(trainingRoute);

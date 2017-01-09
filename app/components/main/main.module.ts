@@ -3,9 +3,8 @@ import { NativeScriptModule } from 'nativescript-angular/platform';
 import { NativeScriptHttpModule } from 'nativescript-angular/http';
 import { NativeScriptRouterModule } from 'nativescript-angular/router';
 
-import { DiscoverService } from './shared/discover.service';
-import { DiscoverComponent } from './discover.component';
-import { routes } from './discover.routes';
+import { RealMainComponent } from './main.component';
+import { routes } from './main.routes';
 
 @NgModule({
   imports: [
@@ -14,9 +13,8 @@ import { routes } from './discover.routes';
     NativeScriptRouterModule,
     // routes
   ],
-  declarations: [DiscoverComponent],
-  providers: [DiscoverService],
-  exports: [DiscoverComponent]
+  declarations: [RealMainComponent],
+  exports: [RealMainComponent]
 })
-export class DiscoverModule {
+export class RealMainModule {
 }

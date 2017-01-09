@@ -14,7 +14,7 @@ import { LoginService } from './shared/login.service';
     NativeScriptFormsModule,
     NativeScriptHttpModule,
     NativeScriptRouterModule,
-    routes
+    // routes
   ],
   declarations: [LoginComponent],
   providers: [LoginService],
