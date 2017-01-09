@@ -31,17 +31,17 @@
   <GridLayout row="1" columns="*, auto" class="controller">
     <StackLayout col="0" orientation="horizontal">
       <Label text="Choose only one match carefully"></Label>
-      <Label text="1"></Label>
+      <Label text="{{currentIndex + 1}}"></Label>
       <Label text="/"></Label>
-      <Label text="3"></Label>
+      <Label text="{{totalPage}}"></Label>
     </StackLayout>
     <StackLayout col="1" orientation="horizontal">
-      <button text="skip"></button>
+      <button text="skip" (tap)="seeMore()"></button>
     </StackLayout>
   </GridLayout>
 
   <GridLayout row="2" columns="*, *">
-    <StackLayout [col]="i" class="person" *ngFor="let candidate of candidates; let i = index;">
+    <StackLayout [col]="i" class="person" *ngFor="let candidate of candidates | slice: (currentIndex * 2) : ((currentIndex + 1) * 2); let i = index;">
       <AbsoluteLayout class="person-card">
         <Image src="{{candidate.profile.imagePath}}" stretch="aspectFill" class="profile-image"></Image>
 

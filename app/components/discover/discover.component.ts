@@ -17,6 +17,8 @@ export class DiscoverComponent implements OnInit {
   public candidates: Array<ICandadate>;
   public subnav: Array<ISubnav>;
   public currentNav = 'today';
+  public currentIndex = 0;
+  public totalPage: number;
 
   constructor (private discoverService: DiscoverService) {
   }
@@ -24,12 +26,21 @@ export class DiscoverComponent implements OnInit {
   ngOnInit () {
     this.candidates = this.discoverService.getCandidates();
     this.subnav = this.discoverService.getSubNav();
+
+    this.totalPage = this.candidates.length / 2;
   }
 
   // Event
   setCurrentNav (current: string) {
     if (this.currentNav !== current) {
       this.currentNav = current;
+    }
+  }
+
+  seeMore () {
+    const { currentIndex, totalPage } = this;
+    if ((currentIndex + 1) !== totalPage) {
+      this.currentIndex = currentIndex + 1;
     }
   }
 }
