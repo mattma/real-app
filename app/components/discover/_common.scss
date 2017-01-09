@@ -72,6 +72,25 @@ $card-margin-spacing: 8;
   }
 }
 
+.controller {
+  padding: 4 $card-margin-spacing;
+
+  Label, Button {
+    font-size: 12;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  Label {
+    color: rgb(170, 170, 170);
+  }
+
+  Button {
+    horizontal-align: right;
+    color: rgb(120, 120, 120);
+  }
+}
+
 .person {
   border-right-style: solid;
   border-right-width: 1;

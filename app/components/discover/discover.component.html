@@ -16,7 +16,7 @@
   </StackLayout>
 </ActionBar>
 
-<GridLayout rows="60, 20, *">
+<GridLayout rows="60, 30, *">
   <GridLayout row="0" columns="*, *, *, *" class="sub-nav-tab">
     <label col="0" text="Today" class="current"></label>
     <label col="1" text="Past"></label>
@@ -24,13 +24,17 @@
     <label col="3" text="L.bot" class="last"></label>
   </GridLayout>
 
-  <StackLayout row="1" orientation="horizontal">
-    <Label text="Choose only one match carefully"></Label>
-    <Label text="1"></Label>
-    <Label text="/"></Label>
-    <Label text="3"></Label>
-    <button text="skip" horizontalAlignment="right"></button>
-  </StackLayout>
+  <GridLayout row="1" columns="*, auto" class="controller">
+    <StackLayout col="0" orientation="horizontal">
+      <Label text="Choose only one match carefully"></Label>
+      <Label text="1"></Label>
+      <Label text="/"></Label>
+      <Label text="3"></Label>
+    </StackLayout>
+    <StackLayout col="1" orientation="horizontal">
+      <button text="skip"></button>
+    </StackLayout>
+  </GridLayout>
 
   <GridLayout row="2" columns="*, *">
     <StackLayout [col]="i" class="person" *ngFor="let candidate of candidates; let i = index;">
