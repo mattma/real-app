@@ -14,3 +14,7 @@ export interface ICandadate {
   profileVerification: Array<string>;
   profileDisplay: Array<string>;
 }
+
+export interface ISubnav {
+  text: string;
+}

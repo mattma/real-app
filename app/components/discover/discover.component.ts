@@ -6,7 +6,7 @@ import { RouterExtensions } from 'nativescript-angular/router';
 // import { TextField } from "ui/text-field";
 
 import { DiscoverService } from './shared/discover.service';
-import { ICandadate } from './shared/discover.model';
+import { ICandadate, ISubnav } from './shared/discover.model';
 
 @Component({
   selector: 'real-home',
@@ -15,11 +15,21 @@ import { ICandadate } from './shared/discover.model';
 })
 export class DiscoverComponent implements OnInit {
   public candidates: Array<ICandadate>;
+  public subnav: Array<ISubnav>;
+  public currentNav = 'today';
 
   constructor (private discoverService: DiscoverService) {
   }
 
   ngOnInit () {
     this.candidates = this.discoverService.getCandidates();
+    this.subnav = this.discoverService.getSubNav();
+  }
+
+  // Event
+  setCurrentNav (current: string) {
+    if (this.currentNav !== current) {
+      this.currentNav = current;
+    }
   }
 }

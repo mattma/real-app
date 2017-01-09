@@ -1,9 +1,18 @@
 import { Injectable } from '@angular/core';
 
-import { ICandadate } from './discover.model';
+import { ICandadate, ISubnav } from './discover.model';
 
 @Injectable()
 export class DiscoverService {
+  getSubNav (): Array<ISubnav> {
+    return [
+      { text: 'today' },
+      { text: 'past' },
+      { text: 'find' },
+      { text: 'L.Bot' }
+    ];
+  }
+
   getCandidates (): Array<ICandadate> {
     return [{
       socialServices: [

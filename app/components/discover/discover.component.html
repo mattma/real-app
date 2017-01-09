@@ -18,10 +18,14 @@
 
 <GridLayout rows="60, 30, *">
   <GridLayout row="0" columns="*, *, *, *" class="sub-nav-tab">
-    <label col="0" text="Today" class="current"></label>
-    <label col="1" text="Past"></label>
-    <label col="2" text="Find"></label>
-    <label col="3" text="L.bot" class="last"></label>
+    <label
+      [col]="i"
+      [text]="nav.text"
+      [class.current]="nav.text === currentNav"
+      [class.last]="isLast"
+      (tap)="setCurrentNav(nav.text)"
+      *ngFor="let nav of subnav; let i = index; let isLast = last;">
+    </label>
   </GridLayout>
 
   <GridLayout row="1" columns="*, auto" class="controller">
